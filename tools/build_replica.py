@@ -112,6 +112,26 @@ def crawl(source, out_dir, missing):
     return saved
 
 
+def fetch_not_found_page(source, out_dir, missing):
+    """يحفظ صفحة 404 الأصلية كـ404.html، ليعيد الموقع 404 للمسارات غير الموجودة كما الأصل."""
+    probe = urllib.parse.urljoin(source, "/__replica_probe_404__")
+    try:
+        fetch(probe)
+        missing.append({"url": probe, "reason": "المسار الوهمي أُرجع بنجاح، فلم تُحفظ صفحة 404"})
+        return False
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            missing.append({"url": probe, "reason": f"رمز غير متوقع {e.code}"})
+            return False
+        body = e.read()
+    except (urllib.error.URLError, OSError) as e:
+        missing.append({"url": probe, "reason": str(e)[:160]})
+        return False
+    with open(os.path.join(out_dir, "404.html"), "wb") as f:
+        f.write(body)
+    return True
+
+
 def fetch_archive_dates(source, out_dir, missing):
     """يُرجع قائمة التواريخ من reports/en/index.json، ويحفظ الملف."""
     index_url = urllib.parse.urljoin(source, "/reports/en/index.json")
@@ -308,6 +328,7 @@ def build(args):
         print("فشل: تعذّر جلب فهرس الإصدارات، والأرشيف سيكون فارغًا.", file=sys.stderr)
         return 1
     dated = fetch_dated_pages(source, out_dir, dates, missing)
+    not_found = fetch_not_found_page(source, out_dir, missing)
     rewritten = rewrite_to_relative(out_dir)
     brand = brand_normalize(out_dir) if not args.no_brand else None
     broken = check_local_links(out_dir)
@@ -322,6 +343,7 @@ def build(args):
         "archive_dates": dates,
         "files_rewritten_to_relative": rewritten,
         "brand_applied": brand,
+        "not_found_page_saved": not_found,
         "missing": missing,
         "broken_local_links": broken,
     }
