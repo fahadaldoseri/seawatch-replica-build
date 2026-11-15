@@ -1,0 +1,56 @@
+name: replica-deploy
+
+# يبني النسخة المحلية الثابتة من الموقع المنشور، وينشرها على Cloudflare Pages.
+# النشر يتم فقط إذا اكتمل البناء بالرمز 0 (لا نقص ولا روابط مكسورة).
+# يحتاج سرًا واحدًا في إعدادات المستودع: CLOUDFLARE_API_TOKEN (صلاحية Cloudflare Pages Edit)
+# ومتغيرًا واحدًا: CLOUDFLARE_ACCOUNT_ID.
+
+on:
+  schedule:
+    - cron: "30 4 * * *"   # 07:30 بتوقيت البحرين، بعد المهمة اليومية للخط الأصلي
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: replica-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: تثبيت Pillow لتوليد الشعار المحايد
+        run: pip install pillow
+
+      - name: بناء النسخة من المصدر الدائم
+        id: build
+        run: |
+          set +e
+          python3 tools/build_replica.py \
+            --source https://seawatch-live.pages.dev/ \
+            --out "$RUNNER_TEMP/replica" \
+            --zip
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: إيقاف النشر إذا لم يكتمل البناء
+        if: steps.build.outputs.code != '0'
+        run: |
+          echo "البناء لم يكتمل (رمز ${{ steps.build.outputs.code }})، والنشر متوقف."
+          exit 1
+
+      - name: نشر على Cloudflare Pages
+        if: steps.build.outputs.code == '0'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ${{ runner.temp }}/replica/seawatch-replica --project-name=seawatch-replica --branch=main
