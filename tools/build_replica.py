@@ -224,12 +224,31 @@ def neutral_mark(size):
     return im.resize((size, size), Image.LANCZOS)
 
 
+# هوية مستقلة: كل روابط نطاق الأصل تُوجَّه إلى نطاق النسخة، وصورة المشاركة تُستبدل بصورة محايدة
+BRAND_HOST_OLD = "seawatch-live.pages.dev"
+BRAND_HOST_NEW = "seawatch-replica.pages.dev"  # غيّره إن تغيّر نطاق النسخة
+
+
+def neutral_og(size=(1200, 630)):
+    """صورة مشاركة محايدة بلا ختم ولا نص دولة: خلفية داكنة وعلامة الموقع في الوسط."""
+    from PIL import Image, ImageDraw
+    w, h = size
+    im = Image.new("RGB", (w, h), (7, 12, 22))
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        t = y / h
+        d.line([(0, y), (w, y)], fill=(int(7 + 6 * t), int(12 + 14 * t), int(22 + 20 * t)))
+    mark = neutral_mark(360).convert("RGBA")
+    im.paste(mark, ((w - 360) // 2, (h - 360) // 2), mark)
+    return im
+
+
 def brand_normalize(out_dir):
     """يوحّد الاسم والعنوان الإنجليزي ومكدّس الخط ولون الخلفية، ويستبدل الشعار الشبيه بالختم."""
-    stats = {"name": 0, "en_title": 0, "font": 0, "bg": 0, "logo": 0}
+    stats = {"name": 0, "en_title": 0, "font": 0, "bg": 0, "logo": 0, "host": 0, "og": 0}
     for d, _, files in os.walk(out_dir):
         for name in files:
-            if not name.endswith((".html", ".css")):
+            if not name.endswith((".html", ".css", ".xml", ".json", ".js")):
                 continue
             path = os.path.join(d, name)
             with open(path, encoding="utf-8", errors="ignore") as f:
@@ -249,11 +268,17 @@ def brand_normalize(out_dir):
             if path == os.path.join(out_dir, "index.html"):
                 stats["bg"] += new.count("--bg:#040810") + new.count("--sn-bg:#040810")
                 new = new.replace("--bg:#040810", "--bg:#050a12").replace("--sn-bg:#040810", "--sn-bg:#050a12")
+            hc = new.count(BRAND_HOST_OLD)
+            stats["host"] = stats.get("host", 0) + hc
+            new = new.replace(BRAND_HOST_OLD, BRAND_HOST_NEW)
             if new != text:
                 with open(path, "w", encoding="utf-8") as f:
                     f.write(new)
     assets = os.path.join(out_dir, "assets")
     if os.path.isdir(assets):
+        if os.path.exists(os.path.join(assets, "og-1200x630.png")):
+            neutral_og().save(os.path.join(assets, "og-1200x630.png"))
+            stats["og"] = 1
         for name, size in (("logo-header.png", 80), ("icon-32.png", 32), ("icon-180.png", 180), ("icon-512.png", 512)):
             if os.path.exists(os.path.join(assets, name)):
                 neutral_mark(size).save(os.path.join(assets, name))
@@ -300,6 +325,8 @@ def build(args):
         "missing": missing,
         "broken_local_links": broken,
     }
+    if not args.no_brand:
+        manifest.pop("source", None)  # هوية مستقلة: لا يُكتب عنوان الأصل في النسخة المنشورة
     with open(os.path.join(out_dir, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
