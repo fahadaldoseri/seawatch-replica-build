@@ -426,6 +426,23 @@ def write_feeds_status(out_dir, path):
     return info
 
 
+def write_snapshot_notice(out_dir, built_at):
+    """يضيف إلى الصفحة الرئيسية سطرًا يُعلن أن النسخة لقطة ثابتة بتاريخ البناء، ولا تُحدَّث تلقائيًا."""
+    home = os.path.join(out_dir, "index.html")
+    if not os.path.exists(home):
+        return False
+    with open(home, encoding="utf-8") as f:
+        text = f.read()
+    if text.count("</body>") != 1:
+        return False
+    note = html.escape(f"نسخة ثابتة (لقطة) بتاريخ {built_at}، ولا تُحدَّث تلقائيًا.")
+    line = (f'<p style="max-width:920px;margin:8px auto;padding:0 16px;font-size:14px;'
+            f'color:#e0b25a;text-align:center">{note}</p>')
+    with open(home, "w", encoding="utf-8") as f:
+        f.write(text.replace("</body>", line + "</body>"))
+    return True
+
+
 def build(args):
     out_root = os.path.abspath(args.out)
     out_dir = os.path.join(out_root, "seawatch-replica")
@@ -452,6 +469,7 @@ def build(args):
     rewritten = rewrite_to_relative(out_dir)
     brand = brand_normalize(out_dir) if not args.no_brand else None
     feeds = write_feeds_status(out_dir, args.feeds_status or FEEDS_STATUS_DEFAULT)
+    snapshot = write_snapshot_notice(out_dir, dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"))
     broken = check_local_links(out_dir)
 
     files = [os.path.join(d, n) for d, _, ns in os.walk(out_dir) for n in ns]
@@ -466,6 +484,7 @@ def build(args):
         "brand_applied": brand,
         "not_found_page_saved": not_found,
         "feeds_status": feeds,
+        "snapshot_notice": snapshot,
         "missing": missing,
         "broken_local_links": broken,
     }
