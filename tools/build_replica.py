@@ -22,6 +22,7 @@
 """
 import argparse
 import datetime as dt
+import html
 import json
 import os
 import re
@@ -306,6 +307,125 @@ def brand_normalize(out_dir):
     return stats
 
 
+# ---------- حالة التغذيات: عرض فقط، لا تمنع النشر (قرار فهد) ----------
+FEEDS_STATUS_DEFAULT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "sources", "feeds-status.json")
+FEEDS_STATUS_KEYS = ("date", "status", "checked", "ok", "failed", "failed_feeds", "stale")
+FEEDS_STATUS_LABELS = {"ok": "سليمة", "degraded": "منقوصة", "failed": "فاشلة"}
+
+
+def load_feeds_status(path):
+    """يقرأ ملف حالة التغذيات، ويُرجع (البيانات، سبب التعذّر). لا يوقف البناء أبدًا."""
+    if not path or not os.path.exists(path):
+        return None, "الملف غير موجود"
+    try:
+        with open(path, encoding="utf-8") as f:
+            obj = json.load(f)
+    except (OSError, ValueError) as e:
+        return None, f"تعذّر قراءة الملف: {e}"[:160]
+    if not isinstance(obj, dict) or any(k not in obj for k in FEEDS_STATUS_KEYS):
+        return None, "مفاتيح الملف ناقصة"
+    return obj, ""
+
+
+def feeds_status_line(obj):
+    label = FEEDS_STATUS_LABELS.get(obj["status"], str(obj["status"]))
+    return f"حالة التغذيات: {label}، {obj['ok']} من {obj['checked']} سليمة، بتاريخ {obj['date']}"
+
+
+FEEDS_PAGE = """<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حالة التغذيات</title>
+<style>
+body{margin:0;background:#050a12;color:#e6edf5;font-family:system-ui,Tahoma,sans-serif;line-height:1.7}
+main{max-width:920px;margin:0 auto;padding:24px 16px}
+h1{font-size:24px;margin:0 0 8px}
+h2{font-size:20px;margin:28px 0 8px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th,td{border-bottom:1px solid #1d2a3d;padding:8px;text-align:right;vertical-align:top}
+.muted{color:#9fb0c4}
+a{color:#7fd6cc}
+</style>
+</head>
+<body>
+<main>
+<h1>حالة التغذيات</h1>
+<p id="summary" class="muted"></p>
+<div id="body"></div>
+<p class="muted"><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+</main>
+<script type="application/json" id="fs-data">__FS_DATA__</script>
+<script>
+(function () {
+  var out = document.getElementById("body");
+  var sum = document.getElementById("summary");
+  var raw = document.getElementById("fs-data").textContent;
+  var d = null;
+  try { d = JSON.parse(raw); } catch (e) { d = null; }
+  if (!d || typeof d !== "object") { sum.textContent = "الملف غير متاح."; return; }
+  var labels = { ok: "سليمة", degraded: "منقوصة", failed: "فاشلة" };
+  sum.textContent = "الحالة: " + (labels[d.status] || d.status) + " — " + d.ok + " من " + d.checked + " سليمة — بتاريخ " + d.date;
+  function h(tag, text, cls) { var el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; return el; }
+  function table(headers, rows) {
+    var t = document.createElement("table");
+    var tr = document.createElement("tr");
+    headers.forEach(function (x) { tr.appendChild(h("th", x)); });
+    t.appendChild(tr);
+    rows.forEach(function (r) {
+      var row = document.createElement("tr");
+      r.forEach(function (c) { row.appendChild(h("td", String(c))); });
+      t.appendChild(row);
+    });
+    return t;
+  }
+  var box = out;
+  if (d.method) box.appendChild(h("p", d.method, "muted"));
+  box.appendChild(h("h2", "المصادر المتعذّرة (" + (d.failed_feeds || []).length + ")"));
+  var failed = (d.failed_feeds || []).map(function (f) {
+    return [f.num, f.name, f.category || "", f.http];
+  });
+  box.appendChild(failed.length ? table(["#", "المصدر", "السبب", "الرمز"], failed) : h("p", "لا توجد مصادر متعذّرة.", "muted"));
+  box.appendChild(h("h2", "مصادر متقادمة (أكثر من " + (d.stale_days_limit || 14) + " يومًا)"));
+  box.appendChild(h("p", (d.stale && d.stale.length) ? ("أرقام الصفوف: " + d.stale.join("، ")) : "لا توجد.", "muted"));
+  if (d.written_utc) box.appendChild(h("p", "كُتب الملف: " + d.written_utc, "muted"));
+})();
+</script>
+</body>
+</html>
+"""
+
+
+def write_feeds_status(out_dir, path):
+    """يكتب ملف الحالة وصفحة العرض، ويضيف سطر الحالة إلى الصفحة الرئيسية.
+    يُرجع وصفًا للحالة في المانيفست. لا يُغيّر رمز الخروج."""
+    obj, reason = load_feeds_status(path)
+    info = {"available": obj is not None, "status": obj.get("status") if obj else None,
+            "reason": reason, "shown_on_home": False}
+    if obj is None:
+        print(f"تنبيه: حالة التغذيات غير متاحة ({reason})، والنسخة تُبنى بلا سطر الحالة.")
+        return info
+    with open(os.path.join(out_dir, "feeds-status.json"), "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=2)
+    data = json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+    with open(os.path.join(out_dir, "feeds-status.html"), "w", encoding="utf-8") as f:
+        f.write(FEEDS_PAGE.replace("__FS_DATA__", data))
+    home = os.path.join(out_dir, "index.html")
+    if os.path.exists(home):
+        with open(home, encoding="utf-8") as f:
+            text = f.read()
+        if text.count("</body>") == 1:
+            line = html.escape(feeds_status_line(obj))
+            note = (f'<p style="max-width:920px;margin:16px auto;padding:0 16px;font-size:14px;'
+                    f'color:#9fb0c4;text-align:center"><a href="feeds-status.html" style="color:#7fd6cc">'
+                    f"{line}</a></p>")
+            with open(home, "w", encoding="utf-8") as f:
+                f.write(text.replace("</body>", note + "</body>"))
+            info["shown_on_home"] = True
+    return info
+
+
 def build(args):
     out_root = os.path.abspath(args.out)
     out_dir = os.path.join(out_root, "seawatch-replica")
@@ -331,6 +451,7 @@ def build(args):
     not_found = fetch_not_found_page(source, out_dir, missing)
     rewritten = rewrite_to_relative(out_dir)
     brand = brand_normalize(out_dir) if not args.no_brand else None
+    feeds = write_feeds_status(out_dir, args.feeds_status or FEEDS_STATUS_DEFAULT)
     broken = check_local_links(out_dir)
 
     files = [os.path.join(d, n) for d, _, ns in os.walk(out_dir) for n in ns]
@@ -344,6 +465,7 @@ def build(args):
         "files_rewritten_to_relative": rewritten,
         "brand_applied": brand,
         "not_found_page_saved": not_found,
+        "feeds_status": feeds,
         "missing": missing,
         "broken_local_links": broken,
     }
@@ -385,6 +507,7 @@ def main():
     p.add_argument("--out", default="replica-out", help="مجلد الإخراج")
     p.add_argument("--zip", action="store_true", help="إنشاء أرشيف zip بجانب المجلد")
     p.add_argument("--no-brand", action="store_true", help="تخطي التوحيد البصري والشعار المحايد")
+    p.add_argument("--feeds-status", help="ملف حالة التغذيات للعرض (الافتراضي sources/feeds-status.json)")
     p.add_argument("--verify", metavar="DIR", help="فحص الروابط المحلية لنسخة موجودة فقط")
     args = p.parse_args()
     if args.verify:
