@@ -1,13 +1,13 @@
 name: replica-deploy
 
-# يبني النسخة المحلية الثابتة من الموقع المنشور، وينشرها على Cloudflare Pages.
-# النشر يتم فقط إذا اكتمل البناء بالرمز 0 (لا نقص ولا روابط مكسورة).
+# يبني النسخة من اللقطة المحفوظة داخل هذا المستودع (snapshot/)، وينشرها على Cloudflare Pages.
+# لا يتصل بالموقع الأصلي عند التشغيل: الاستقلال عن مانوس.
+# النشر يتم فقط إذا اكتمل البناء بالرمز 0 وكان الفرع main.
 # يحتاج سرًا واحدًا في إعدادات المستودع: CLOUDFLARE_API_TOKEN (صلاحية Cloudflare Pages Edit)
 # ومتغيرًا واحدًا: CLOUDFLARE_ACCOUNT_ID.
 
 on:
-  # الجدولة اليومية أُوقفت: النسخة لم تعد تُسحب من الموقع الأصلي تلقائيًا.
-  # التشغيل اليدوي يبقى متاحًا عند الحاجة فقط.
+  # لا جدولة: التشغيل يدوي من المالك فقط.
   workflow_dispatch:
 
 permissions:
@@ -31,12 +31,12 @@ jobs:
       - name: تثبيت Pillow لتوليد الشعار المحايد
         run: pip install pillow
 
-      - name: بناء النسخة من المصدر الدائم
+      - name: بناء النسخة من اللقطة المحفوظة
         id: build
         run: |
           set +e
           python3 tools/build_replica.py \
-            --source https://seawatch-live.pages.dev/ \
+            --snapshot snapshot/seawatch-replica \
             --out "$RUNNER_TEMP/replica" \
             --zip
           echo "code=$?" >> "$GITHUB_OUTPUT"

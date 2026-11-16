@@ -1,0 +1,631 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="مركز الوعي بالمجال البحري: تقارير أمن الملاحة اليومية في مضيق هرمز والخليج العربي وبحر العرب والبحر الأحمر.">
+<meta name="keywords" content="الأمن البحري, أمن الملاحة, مركز الوعي بالمجال البحري, مضيق هرمز, الخليج العربي, تقرير أمني بحري يومي">
+<meta property="og:type" content="website"><meta property="og:site_name" content="مركز الوعي بالمجال البحري"><meta property="og:locale" content="ar_BH"><meta property="og:title" content="مركز الوعي بالمجال البحري — تقارير أمن الملاحة"><meta property="og:description" content="منصة دائمة لتقارير أمن الملاحة: إصدار يومي بمؤشراته وخرائطه، ولوحة شهرية مبنية من دفتر أحداث تراكمي، وسجل تاريخي للمقارنة."><meta property="og:url" content="https://seawatch-replica.pages.dev/"><meta property="og:image" content="https://seawatch-replica.pages.dev/assets/og-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="مركز الوعي بالمجال البحري — تقارير أمن الملاحة"><meta name="twitter:description" content="منصة دائمة لتقارير أمن الملاحة: إصدار يومي بمؤشراته وخرائطه، ولوحة شهرية مبنية من دفتر أحداث تراكمي، وسجل تاريخي للمقارنة."><meta name="twitter:image" content="https://seawatch-replica.pages.dev/assets/og-1200x630.png">
+<meta name="theme-color" content="#040810">
+<link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="assets/icon-512.png" sizes="512x512" type="image/png"><link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="تغذية الإصدارات اليومية" href="feed.xml">
+<title>مركز الوعي بالمجال البحري — تقارير أمن الملاحة</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+
+:root{--sn-bg:#050a12;--sn-panel:#0b1524;--sn-line:#1b2b45;--sn-ink:#e9f0f9;--sn-ink2:#b9c8dc;
+--sn-muted:#7f95ae;--sn-accent:#22c3b6;--sn-accent-ink:#04120f}
+html{scroll-behavior:smooth}
+/* ── هوية (م-28): ذهبي للهوية · تركوازي للبيانات ── */
+:root{--sn-gold:#e8be60}
+body.daylight{--sn-gold:#8a6410}
+.sn-logo{width:40px;height:40px;flex:0 0 auto;display:block;border-radius:50%;
+filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+body.daylight .sn-logo{box-shadow:0 0 0 1px rgba(10,41,59,.28)}
+.site-nav.is-compact .sn-logo{width:26px;height:26px}
+.sn-name{color:var(--sn-gold)}
+.sn-links a:hover{color:var(--sn-gold)}
+.sn-links a[aria-current="page"]{color:var(--sn-gold);border-color:var(--sn-gold)}
+.print-brand{display:none}
+@media print{.print-brand{display:flex!important;align-items:center;gap:10px;padding:0 0 8px;
+border-bottom:1px solid #999;margin:0 0 12px;font-size:13px;color:#111}
+.print-brand img{width:34px;height:34px}}
+
+body.daylight{--sn-bg:#eef3f9;--sn-panel:#ffffff;--sn-line:#d3dded;--sn-ink:#0d1a2b;--sn-ink2:#33475e;
+--sn-muted:#4f657c;--sn-accent:#0b7a72;--sn-accent-ink:#ffffff}
+.site-nav{position:sticky;top:0;z-index:60;background:var(--sn-bg);border-bottom:1px solid var(--sn-line);
+font-family:"IBM Plex Sans Arabic","Noto Kufi Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
+.site-nav .sn-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 20px;flex-wrap:wrap}
+.site-nav.is-compact .sn-inner{padding:3px 20px;gap:8px}
+.site-nav.is-compact .sn-name em{display:none}
+.site-nav.is-compact .sn-mark{width:22px;height:22px}
+.site-nav.is-compact .sn-mark svg{width:13px;height:13px}
+.site-nav.is-compact .sn-links{flex-wrap:nowrap;overflow-x:auto}
+.site-nav.is-compact .sn-links a{padding:4px 7px;min-height:26px;font-size:13px}
+.site-nav.is-compact{box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.site-nav a{color:var(--sn-ink2);text-decoration:none}
+.sn-brand{display:flex;align-items:center;gap:10px;color:var(--sn-ink)!important;font-weight:700}
+.sn-mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;
+background:linear-gradient(150deg,var(--sn-accent),#0c8b83);color:#04120f}
+.sn-mark svg{width:17px;height:17px}
+.sn-name{display:flex;flex-direction:column;line-height:1.25}
+.sn-name em{font-style:normal;font-size:12.5px;font-weight:500;color:var(--sn-muted)}
+.sn-links{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+.sn-links a{padding:6px 8px;min-height:32px;display:inline-flex;align-items:center;border-radius:8px;font-size:13.5px;border:1px solid transparent}
+.sn-links a:hover{background:var(--sn-panel);border-color:var(--sn-line);color:var(--sn-ink)}
+.sn-links a[aria-current="page"]{background:var(--sn-panel);border-color:var(--sn-line);color:var(--sn-ink);font-weight:600}
+.sn-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:0}
+/* أدوات أيقونية بأربع أدوات (م-06 · م-23 · م-24) */
+.sn-tools button,.sn-tools a,.sn-tools span.sn-tool{min-height:44px;min-width:44px}
+.sn-tool{display:inline-flex;align-items:center;justify-content:center;background:var(--sn-panel);
+border:1px solid var(--sn-line);color:var(--sn-ink2);border-radius:9px;padding:0;cursor:pointer;font:inherit}
+.sn-tool:hover{color:var(--sn-ink);border-color:var(--sn-accent)}
+.sn-tool:focus-visible{outline:2px solid var(--sn-accent);outline-offset:2px}
+.sn-ico{width:19px;height:19px;display:inline-block}
+.sn-ico-a{font-size:15px;font-weight:700;line-height:1;width:auto;height:auto}
+.sn-ico-sun{display:none}
+body.daylight .sn-ico-sun{display:inline-block}
+body.daylight .sn-ico-moon{display:none}
+.sn-vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sn-lang{display:flex;flex:0 0 auto;border:1px solid var(--sn-line);border-radius:9px;overflow:hidden;background:var(--sn-panel)}
+.sn-lang a,.sn-lang span{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;
+color:var(--sn-ink2);text-decoration:none;font-size:13px;background:transparent}
+.sn-lang a:hover{color:var(--sn-ink);background:var(--sn-bg)}
+.sn-lang .sn-cur{background:var(--sn-accent);color:var(--sn-accent-ink);font-weight:700}
+.sn-lang .sn-off{color:var(--sn-muted);opacity:.6;cursor:not-allowed}
+.sn-skip{position:absolute;inset-inline-start:12px;top:-80px;z-index:70;background:var(--sn-accent);color:var(--sn-accent-ink)!important;
+padding:9px 16px;border-radius:9px;font-weight:700;font-size:14px}
+.sn-skip:focus{top:8px;outline:2px solid var(--sn-ink);outline-offset:2px}
+.sn-print{background:var(--sn-accent);color:var(--sn-accent-ink);border-color:transparent;font-weight:700}
+.sn-print:hover{color:var(--sn-accent-ink);filter:brightness(1.08)}
+.sn-print-disabled{background:var(--sn-panel);color:var(--sn-muted);border-color:var(--sn-line);cursor:not-allowed}
+.sn-foot{margin-top:44px;border-top:1px solid var(--sn-line);background:var(--sn-bg);
+font-family:"IBM Plex Sans Arabic","Noto Kufi Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
+.sn-foot .sf-inner{max-width:1180px;margin:0 auto;padding:20px;color:var(--sn-muted);font-size:13px;
+display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+.sn-foot a{color:var(--sn-ink2);display:inline-block;padding:4px 2px;min-height:24px}
+body.daylight .topbar{background:#ffffff!important;border-bottom-color:#d3dded!important}
+body.daylight .brand-title,body.daylight .brand-sub{color:#0d1a2b}
+@media print{.site-nav,.sn-foot{display:none!important}}
+/* ── التنسيق الكتابي الموحّد (م-27): قصير وسط · فقرة مبرَّرة · قوائم إلى اليمين ── */
+.prose{text-align:right}
+.prose p{margin:0 0 9px;line-height:1.7;text-align:justify;text-justify:inter-word}
+.tx-center{text-align:center}
+.tx-just{text-align:justify;text-justify:inter-word}
+.tx-start{text-align:right}
+@media print{.prose p{orphans:3;widows:3}}
+
+/* قائمة الجوال — تضغط شريطي الموقع والصفحة إلى ارتفاع صغير */
+.sn-menu{display:none}
+/* سطح المكتب: الروابط والأدوات في صف واحد بجانب الشعار (كانت تتراصّ صفين داخل اللوحة) */
+@media (min-width:1041px){
+  .sn-panel{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:0}
+  .sn-panel .sn-links{margin-inline-start:0}
+  .sn-panel .sn-tools{margin-inline-start:auto}
+}
+/* عرض متوسط (لوحي): يبقى الشريط صفًّا واحدًا حتى مع زر الطباعة */
+@media (min-width:1041px) and (max-width:1180px){
+  .sn-name em{display:none}
+  .site-nav .sn-inner{gap:8px;padding-inline:14px}
+  .sn-links{gap:0}
+  .sn-links a{padding:6px 5px;font-size:13px}
+  .sn-panel{gap:6px}
+  .sn-tools{gap:6px}
+  .sn-theme{padding:6px 8px}
+}
+@media (max-width:1040px){
+  .site-nav .sn-inner{flex-wrap:nowrap;padding:8px 14px;gap:10px;position:relative}
+  .sn-name em{display:none}
+  .sn-menu{
+    display:inline-flex;align-items:center;gap:8px;margin-inline-start:auto;
+    min-height:44px;padding:0 14px;border-radius:10px;cursor:pointer;
+    background:var(--sn-panel);border:1px solid var(--sn-line);color:var(--sn-ink);font:inherit;font-size:14px
+  }
+  .sn-menu-icon,.sn-menu-icon::before,.sn-menu-icon::after{
+    display:block;width:16px;height:2px;background:currentColor;border-radius:2px;position:relative;
+    transition:transform .2s ease,background-color .2s ease
+  }
+  .sn-menu-icon::before,.sn-menu-icon::after{content:"";position:absolute;inset-inline:0}
+  .sn-menu-icon::before{top:-5px}
+  .sn-menu-icon::after{top:5px}
+  .site-nav.open .sn-menu-icon{background:transparent}
+  .site-nav.open .sn-menu-icon::before{top:0;transform:rotate(45deg)}
+  .site-nav.open .sn-menu-icon::after{top:0;transform:rotate(-45deg)}
+  .sn-panel{
+    display:none;position:absolute;inset-inline:0;top:100%;
+    background:var(--sn-bg);border-bottom:1px solid var(--sn-line);padding:10px 14px 16px;
+    flex-direction:column;gap:12px;box-shadow:0 0 0 100vh rgba(0,0,0,.45);z-index:5
+  }
+  .site-nav.open .sn-panel{display:flex}
+  .site-nav .sn-links{flex-direction:column;margin:0;gap:2px}
+  .site-nav .sn-links a{min-height:44px;display:flex;align-items:center}
+  .topbar-inner{flex-wrap:nowrap !important;padding:6px 14px !important;gap:8px !important}
+  .topbar .brand-sub,.topbar .tb-meta .chip,.topbar .brand-mark{display:none}
+  .topbar .brand-title{font-size:13.5px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .topbar .tb-meta{display:flex;gap:6px;flex:0 0 auto}
+  .topbar .btn{min-height:40px;padding:6px 10px}
+}
+  .topbar .btn{min-width:44px;display:inline-flex;align-items:center;justify-content:center}
+
+/* أهداف لمس على سطح المكتب — الشاشة فقط (قياس 2026-10-29: 34×35.3 و93.9×39.3) */
+@media screen{
+  .topbar a, .topbar button, .topbar .btn, .sn-brand, .sn-links a,
+  .sc-toggle, .sc-jump a, .chip, .chip a, .tb-meta .btn,
+  .sn-tools button, .sn-tools a, .sn-scale button, .sc-more a,
+  .sc-all button, details.sc-basis summary, .sf-inner a,
+  .sx-card a, .sx-name a, .sx-links a, .sx-row a, .sx-src a,
+  .sx-ref a, .sx-refs a, .src-ref a, .open-report a, a.btn-link, .sup-banner a{
+    min-height:44px; min-width:44px; display:inline-flex; align-items:center;
+    justify-content:center; box-sizing:border-box;
+  }
+}
+/* أهداف لمس وقص النص على الجوال — الشاشة فقط */
+@media screen and (max-width:820px){
+  a, button, [role="button"], summary {
+    min-height:44px !important;
+    min-width:44px !important;
+    display:inline-flex;
+    align-items:center;
+    box-sizing:border-box;
+  }
+  nav a, .sn-link, .sn-brand, .p-btn, .chip a, .sc-jump a,
+  button, summary, .sc-toggle {
+    min-height:44px !important;
+    min-width:44px !important;
+    padding-block:8px;
+  }
+  .sc-toggle, .sc-toggle.no-print {
+    width:44px;
+    height:44px;
+    min-width:44px;
+  }
+  td a, th a, table a, .src a, .st a {
+    min-height:44px !important;
+    min-width:44px !important;
+    display:inline-flex;
+    align-items:center;
+    box-sizing:border-box;
+    padding-block:8px;
+    vertical-align:middle;
+  }
+  .sc-peek, .sc-peek span, .sc-kn, .sc-gist, .sc-sum,
+  [class*="clamp"], [class*="gist"] {
+    -webkit-line-clamp:unset !important;
+    display:block !important;
+    max-height:none !important;
+    overflow:visible !important;
+    white-space:normal !important;
+    text-overflow:clip !important;
+  }
+  nav.sc-jump { -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 26px), transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 26px), transparent 100%); }
+}
+html{scroll-padding-top:calc(var(--nav-h, 60px) + var(--bar-h, 0px) + 12px);scroll-padding-bottom:80px}
+section.doc{scroll-margin-top:0 !important}
+
+:root{--bg:#050a12;--panel:#0b1524;--panel2:#0f1d33;--line:#1b2b45;--ink:#e9f0f9;--ink2:#b9c8dc;
+--muted:#7f95ae;--accent:#22c3b6;--accent-ink:#04120f;--danger:#ff5d52;--warn:#ffb02e;--ok:#33d07a;--info:#4d9dff}
+body.daylight{--bg:#eef3f9;--panel:#ffffff;--panel2:#f5f8fc;--line:#d3dded;--ink:#0d1a2b;--ink2:#33475e;
+--muted:#4f657c;--accent:#0b7a72;--accent-ink:#ffffff;--danger:#c2352c;--warn:#945c00;--ok:#1d7a4c;--info:#1d5fa8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.7;
+font-family:"IBM Plex Sans Arabic","Noto Kufi Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 20px 10px}
+h1{font-size:28px;margin:0 0 6px;line-height:1.35;text-align:center}
+.lede{color:var(--muted);margin:0 0 16px;font-size:14px;max-width:78ch;margin-inline:auto;
+text-align:justify;text-justify:inter-word}
+/* ── شريط الحالة (م-20): المستوى بلونه + التاريخ + الرقم في أول شاشة ── */
+.statusbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--panel);
+border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 14px}
+.statusbar .sb-risk{font-size:14px;font-weight:700;border:1px solid currentColor;border-radius:99px;padding:2px 12px}
+.statusbar .sb-date{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink);text-align:center}
+.statusbar .sb-code{font-size:12.5px;color:var(--muted)}
+.statusbar .sb-open{margin-inline-start:auto;color:var(--accent);font-size:13.5px;font-weight:600;text-decoration:none}
+.statusbar .sb-open:hover{border-bottom:1px solid var(--accent)}
+@media(min-width:901px){.statusbar{position:sticky;top:62px;z-index:40}}
+/* ── السجل: سنوات ثم أشهر (م-01 ج) ── */
+.registry{list-style:none;margin:0;padding:0}
+.yr-item{border-bottom:1px solid var(--line)}
+.yr-item:last-child{border-bottom:0}
+.yr{cursor:pointer;padding:11px 2px;font-size:14.5px;font-weight:600;color:var(--ink2);text-align:right}
+.yr-item.is-empty .yr{color:var(--muted)}
+.months{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px}
+.months .mo{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;
+background:transparent;border:1px solid var(--line);border-radius:9px;padding:8px 10px;
+color:var(--ink2);font:inherit;font-size:13.5px;cursor:pointer;text-align:right;min-height:40px}
+.months .mo:hover{border-color:var(--accent);color:var(--ink)}
+.months .mo[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.months .mo .n{font-family:"IBM Plex Mono",monospace;font-size:12px;opacity:.85}
+.months .mo.is-empty{color:var(--muted);opacity:.55;cursor:default;border-style:dashed}
+.ar-extra{display:none}
+.ar.open .ar-extra{display:block}
+.more{margin-top:12px;background:transparent;border:1px solid var(--line);border-radius:10px;
+color:var(--ink2);font:inherit;font-size:13.5px;padding:9px 14px;cursor:pointer;min-height:40px}
+.more:hover{border-color:var(--accent);color:var(--ink)}
+.hero-card{display:block;background:linear-gradient(150deg,var(--panel2),var(--panel));border:1px solid var(--line);
+border-radius:14px;padding:22px;color:inherit;margin:0 0 22px}
+.hc-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.hc-tag{font-size:13px;background:var(--accent);color:var(--accent-ink);padding:3px 10px;border-radius:99px;font-weight:700}
+.hc-risk{font-size:12.5px;border:1px solid var(--line);padding:3px 10px;border-radius:99px}
+.hc-code{font-size:12.5px;color:var(--muted)}
+.hc-code b{color:var(--ink2);font-family:"IBM Plex Mono",monospace}
+.hero-card h2{margin:0 0 8px;font-size:20px}
+.hc-meta{color:var(--muted);font-size:13px;margin:0 0 14px}
+.hc-changes{border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:0 0 12px}
+.hc-changes b{color:var(--ink2);font-size:14px}
+.hc-changes ul{margin:8px 0 0;padding-inline-start:20px}
+.hc-changes li{font-size:14.5px;color:var(--ink2);margin:0 0 6px}
+.hc-action{color:var(--muted);font-size:14px;margin:0 0 14px}
+.hc-action b{color:var(--ink2)}
+.hc-open{display:inline-block;color:var(--accent);font-size:13.5px;font-weight:600;
+text-decoration:none;border-bottom:1px solid transparent;padding:6px 2px}
+.hc-open:hover,.hc-open:focus-visible{border-bottom-color:var(--accent)}
+.hc-open:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p.hint{color:var(--muted);font-size:13px;margin:0 0 14px}
+.pref-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pref-row:last-child{border-bottom:0}
+.pref-row span{font-size:14px;color:var(--ink2)}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{background:transparent;border:0;color:var(--ink2);padding:7px 13px;cursor:pointer;font:inherit;font-size:13.5px}
+.seg button.on{background:var(--accent);color:var(--accent-ink);font-weight:700}
+.cont{display:none;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 22px}
+.cont.on{display:block}
+.cont a{color:var(--accent);text-decoration:none;font-weight:600}
+.cont .ct{color:var(--muted);font-size:12.5px;display:block;margin-top:4px}
+ul.ar{list-style:none;margin:0;padding:0}
+.ar-row{border-bottom:1px solid var(--line)}
+.ar-row:last-child{border-bottom:0}
+.ar-link{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:13px 2px;text-decoration:none;color:inherit}
+.ar-link:hover .ar-date{color:var(--accent)}
+.ar-date{font-weight:600;font-size:15px}
+.ar-risk{font-size:13px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;align-self:start}
+.ar-note{grid-column:1/-1;color:var(--muted);font-size:13px}
+.rk-high{color:var(--danger);border-color:var(--danger)}
+.rk-med{color:var(--warn);border-color:var(--warn)}
+.rk-low{color:var(--ok);border-color:var(--ok)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 22px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.tile b{display:block;font-size:22px;font-family:"IBM Plex Mono",monospace}
+.tile span{color:var(--muted);font-size:13px}
+.foot-note{color:var(--muted);font-size:13px;margin:26px 0 0;border-top:1px solid var(--line);padding-top:14px}
+@media print{body{background:#fff;color:#000}.wrap{padding:0}
+.cont,.hero-card .hc-open{display:none!important}
+.card,.hero-card,.tile{border-color:#bbb;background:#fff;break-inside:avoid}
+.ar-link{color:#000}.ar-note,.hc-meta,.tile span{color:#333}}
+</style>
+<!--replica-visual-fixes--><style>@media screen{body:not(.daylight) a:not([class]):not([style]){color:#7fd6cc}body.daylight a:not([class]):not([style]){color:#0a5c7a}#sn-theme{white-space:nowrap;min-width:max-content}.wrap{overflow-x:clip}}</style></head><style>
+.nf{max-width:760px;margin:26px auto}
+.nf h1{font-size:30px;margin:6px 0 10px}
+.nf-list{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+.nf-list a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 14px;
+  border:1px solid var(--line,#2b3b4e);border-radius:8px;text-decoration:none;color:inherit;min-height:44px}
+.nf-t{font-weight:600}
+.nf-p{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted,#7f95ae);direction:ltr;
+  unicode-bidi:isolate;overflow-wrap:anywhere}
+.nf-list a:hover{border-color:var(--accent,#2fd6c3)}
+.nf-back{display:inline-block;margin-top:6px;font-weight:700;text-decoration:none;color:var(--accent,#2fd6c3)}
+
+/* اتجاه النصوص اللاتينية والإحداثيات — يمنع انقلابها في السياق العربي */
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* رقم المعلّم: نص داكن على معلّم فاتح، ومقلوب في الوضع النهاري */
+body:not(.daylight) .lg-num{color:#04120f}
+body.daylight .lg-num{color:#ffffff}
+
+/* بطاقات الجوال للجداول — البند المعتمد 21 أكتوبر 2026 */
+@media (max-width:560px){
+  table.cardified{display:block;border:0;background:transparent;border-radius:0}
+  table.cardified.cardified{width:100%;max-width:100%;min-width:0}
+  table.cardified thead{display:none}
+  table.cardified tbody{display:block;max-width:100%}
+  table.cardified tr{display:block;max-width:100%;box-sizing:border-box;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin:0 0 10px}
+  table.cardified td{display:grid;grid-template-columns:minmax(72px,auto) minmax(0,1fr);gap:8px;
+    border:0;padding:5px 0;align-items:baseline;text-align:start;
+    overflow-wrap:anywhere;word-break:break-word;min-width:0}
+  table.cardified td::before{content:attr(data-label);color:var(--muted);font-size:12.5px;font-weight:600}
+  table.cardified td:empty{display:none}
+  /* ك-336: النص الإنجليزي الطويل (شرائح الحالة والتسميات) كان يتجاوز عرض بطاقة الجوال 16–31% */
+  table.cardified td > *,table.cardified .st-badge{white-space:normal;overflow-wrap:anywhere;
+    word-break:break-word;min-width:0;max-width:100%}
+  .tbl-wrap:has(table.cardified),.tbl-scroll:has(table.cardified){overflow:visible;border:0}
+  .tbl-hint{display:none}
+}
+/* بانر النسخة المستبدلة — البند المعتمد 21 أكتوبر 2026 */
+.sup-banner{margin:0 0 20px;padding:12px 16px;border:1px solid #c9a24f;border-radius:10px;
+  background:#2a2210;color:#ffd88a;font-size:14px}
+body.daylight .sup-banner{background:#fff7e6;color:#7c5000;border-color:#c9a24f}
+.sup-banner a{color:inherit;font-weight:700;text-decoration:underline}
+.sp-dim{opacity:.72}
+</style><body>
+<script>
+(function(){try{
+var b=document.body;if(!b)return;
+var t=localStorage.getItem('mn-theme');if(t==='light')b.classList.add('daylight');
+/* لغة المستند تعلنها الصفحة نفسها (وسم lang + data-lang)؛ ولغة الشريط تتبع الصفحة أو تفضيل الزائر. */
+var lockE=document.documentElement.getAttribute('data-lang');
+if(lockE==='en'){b.classList.add('lang-en');}
+var s=parseFloat(localStorage.getItem('mn-scale')||'1');if(s&&s!==1)b.style.zoom=s;
+}catch(e){}})();
+</script>
+<nav class="site-nav no-print" aria-label="تنقل الموقع">
+  <a class="sn-skip" href="#main" id="sn-skip" data-i18n="skip">الانتقال إلى المحتوى</a>
+  <div class="print-brand" aria-hidden="true"><img src="assets/logo-header.png" width="34" height="34" alt="Maritime Domain Awareness Center logo — Kingdom of Bahrain"><span>مركز الوعي بالمجال البحري — تقارير أمن الملاحة — مملكة البحرين</span></div>
+  <div class="sn-inner">
+    <a class="sn-brand" href="">
+      <img class="sn-logo" src="assets/logo-header.png" width="40" height="40" alt="Maritime Domain Awareness Center logo — Kingdom of Bahrain" decoding="async">
+      <span class="sn-name">مركز الوعي بالمجال البحري <em>تقارير أمن الملاحة — مملكة البحرين</em></span>
+    </a>
+    <button type="button" class="sn-menu no-print" aria-expanded="false" aria-controls="sn-panel">
+      <span class="sn-menu-icon" aria-hidden="true"></span><span data-i18n="menu">القائمة</span>
+    </button>
+    <div class="sn-panel" id="sn-panel">
+    <div class="sn-links">
+      <a href="" aria-current="page" data-i18n="home">الرئيسية</a>
+      <a href="reports/special.html" data-i18n="special">التقارير الخاصة</a>
+      <a href="#archive" data-i18n="archive">الأرشيف</a>
+      <a href="reports/monthly-2026-10.html" data-i18n="monthly">اللوحة الشهرية</a>
+      <a href="reports/cumulative-2026.html" data-i18n="cumulative">السجل التراكمي</a>
+      <a href="sources.html" data-i18n="sources">المصادر والمراجع</a>
+      <a href="additions.html" data-i18n="additions">الإضافات</a>
+      
+    </div>
+    <div class="sn-tools">
+      <div class="sn-lang" role="group" aria-label="اللغة / Language" data-i18n-aria="lang"><span class="sn-cur" aria-current="true" lang="ar" title="العربية">AR</span><span class="sn-off" aria-disabled="true" lang="en" title="النسخة الإنجليزية متاحة ابتداءً من 29 أكتوبر 2026" data-i18n-aria="no-en-note">EN</span></div>
+      <button type="button" class="sn-tool" id="sn-theme" title="المظهر" aria-label="المظهر" data-i18n-aria="theme">
+        <svg class="sn-ico sn-ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+        <svg class="sn-ico sn-ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+        <span class="sn-vh" id="sn-theme-text">المظهر: ليلي</span>
+      </button>
+      <button type="button" class="sn-tool" id="sn-scale" title="حجم الخط: عادي" aria-label="حجم الخط" data-i18n-aria="scale">
+        <span class="sn-ico sn-ico-a" aria-hidden="true">أ</span>
+        <span class="sn-vh" id="sn-scale-text">حجم الخط: عادي</span>
+      </button>
+      <span class="sn-tool sn-print-disabled" role="status" aria-disabled="true" title="الطباعة غير مفعّلة حاليًا" aria-label="الطباعة غير مفعّلة حاليًا" data-i18n-aria="print-off"><svg class="sn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M7 8V3h10v5M7 18H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7z"/></svg><span class="sn-vh">الطباعة غير مفعّلة حاليًا</span></span>
+    </div>
+    </div>
+  </div>
+</nav>
+<div class="wrap" role="main" id="main" tabindex="-1">
+  <script type="application/json" id="reports-index">[{"d":"2026-11-11","l":"11/11/2026","k":"med","r":"متوسط","s":"11/11/2026 — المستوى العام متوسط."},{"d":"2026-11-10","l":"10/11/2026","k":"severe","r":"مرتفع جدًا","s":"10/11/2026 — المستوى العام مرتفع جدًا."},{"d":"2026-11-09","l":"09/11/2026","k":"severe","r":"مرتفع جدًا","s":"09/11/2026 — المستوى العام مرتفع جدًا."},{"d":"2026-11-08","l":"08/11/2026","k":"high","r":"مرتفع","s":"08/11/2026 — المستوى العام مرتفع."},{"d":"2026-11-07","l":"07/11/2026","k":"high","r":"مرتفع","s":"07/11/2026 — المستوى العام مرتفع."},{"d":"2026-11-06","l":"06/11/2026","k":"high","r":"مرتفع","s":"06/11/2026 — المستوى العام مرتفع."},{"d":"2026-11-05","l":"05/11/2026","k":"severe","r":"مرتفع جدًا","s":"05/11/2026 — المستوى العام مرتفع جدًا."},{"d":"2026-11-04","l":"04/11/2026","k":"med","r":"متوسط","s":"04/11/2026 — المستوى العام متوسط. صدرت تحذيرات UKMTO 194-26 و195-26 في 03/11/2026، وورد بلاغ مهني عن مقتل بحّار هندي في ضربة على قارب داو وبلاغ مهني عن إصابة غرفة محركات…"},{"d":"2026-11-03","l":"03/11/2026","k":"severe","r":"مرتفع جدًا","s":"03/11/2026 — المستوى العام مرتفع. وأعلى قطاع هو مضيق هرمز وخليج عُمان والخليج العربي. أصدرت UKMTO التحذير 193-26 خلال الفترة، ونشرت النص الكامل للتحذير 192-26 عن إصابة…"},{"d":"2026-11-02","l":"02/11/2026","k":"severe","r":"مرتفع جدًا","s":"02/11/2026 — أصدرت UKMTO ثلاثة تحذيرات رسمية خلال الفترة، وأظهرت قائمتها بلاغ هجوم داخل مضيق هرمز. وهذا أعلى تصعيد في قطاع مضيق هرمز وخليج عُمان والخليج العربي. ونقلت…"},{"d":"2026-11-01","l":"01/11/2026","k":"med","r":"متوسط","s":"01/11/2026 — نشرت UKMTO تحذير 190-26 عبر قناتها الرسمية، بينما نقلت مصادر مهنية وإعلامية تقارير عن حريق ناقلات وتسرب نفطي قرب الإمارات؛ لا يثبت ذلك عدد هجمات مستقلًا…"},{"d":"2026-10-31","l":"31 أكتوبر 2026","k":"high","r":"مرتفع","s":"31 أكتوبر 2026 — خلال 24 ساعة السابقة، بقي المستوى العام «مرتفع»، وكان أعلى قطاع هو مضيق هرمز وخليج عُمان والخليج العربي. أبلغت UKMTO عن هجوم على سفينة في مضيق هرمز…"},{"d":"2026-10-30","l":"30 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"30 أكتوبر 2026 — خلال 24 ساعة السابقة، بقي مستوى التهديد مرتفع جدًا في مضيق هرمز وخليج عُمان والخليج العربي، ومنخفضًا في باب المندب والبحر الأحمر، بحر العرب، القرن…"},{"d":"2026-10-29","l":"29 أكتوبر 2026","k":"high","r":"مرتفع","s":"29 أكتوبر 2026 — خلال الفترة 280400Z–290400Z أكتوبر 2026، بقي مستوى التهديد مرتفعًا في مضيق هرمز والخليج العربي والبحر الأحمر وباب المندب، ومتوسطًا في بحر العرب وشرق…"},{"d":"2026-10-28","l":"28 أكتوبر 2026","k":"high","r":"مرتفع","s":"28 أكتوبر 2026 — خلال الفترة 270400Z–280400Z أكتوبر 2026، ارتفع مستوى التهديد في مضيق هرمز والخليج العربي والبحر الأحمر وباب المندب. ظهرت تقارير مهنية عن تهديد سفن…"},{"d":"2026-10-27","l":"27 أكتوبر 2026","k":"high","r":"مرتفع","s":"27 أكتوبر 2026 — خلال الفترة 260400Z–270400Z أكتوبر 2026، نُقل بلاغ حريق سفينة مقابل السواحل العراقية، وتضيف مصادر اليوم تقارير عن وقائع في هرمز وتسرب نفطي مقابل…"},{"d":"2026-10-26","l":"26 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"26 أكتوبر 2026 — خلال الفترة 240400Z–250400Z أكتوبر 2026، نقلت تغذية straits.live عن الحرس الثوري أن سبع ناقلات نفط أصيبت في مضيق هرمز في ليلة واحدة، وإعلانًا عن وقف…"},{"d":"2026-10-25","l":"25 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"25 أكتوبر 2026 — خلال الفترة 240400Z–250400Z أكتوبر 2026، نقلت تغذية straits.live عن الحرس الثوري أن سبع ناقلات نفط أصيبت في مضيق هرمز في ليلة واحدة، وإعلانًا عن وقف…"},{"d":"2026-10-24","l":"24 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"24 أكتوبر 2026 — خلال الفترة 230400Z–240400Z أكتوبر 2026، نقلت تغذية straits.live عن Mehr أن الحرس الثوري قال إن ناقلتين عملاقتين أصابتهما ألغام بحرية في مضيق هرمز. وظهر…"},{"d":"2026-10-23","l":"23 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"23 أكتوبر 2026 — دخلت الفترة بلم يصدر بلاغ هجوم رسمي جديد من UKMTO. لكن قائمة NAVAREA IX المحدَّثة في 22 أكتوبر حملت بندين أمنيين لناقلة نفط داخل مضيق هرمز، أحدهما…"},{"d":"2026-10-22","l":"22 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"22 أكتوبر 2026 — دخل الفترة بلاغان هجوميان رسميان من UKMTO: إصابة ناقلة بمقذوف 11 ميلًا بحريًا غرب بخا داخل المضيق مع حريق أُخمد، وإصابة ناقلة 30 ميلًا بحريًا جنوب شرق…"},{"d":"2026-10-21","l":"21 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"21 أكتوبر 2026 — بلا بلاغ هجوم رسمي جديد في الفترة، والجديد نشرة استشارية رسمية (UKMTO 178) عن واقعة ناقلة مع قوات عسكرية على 121 ميلًا بحريًا شرق الدقم في عُمان. وارتفع…"},{"d":"2026-10-20","l":"20 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"20 أكتوبر 2026 — بلا بلاغ رسمي جديد في الفترة، وأحدث بلاغ UKMTO هو 177-26 بتاريخ 18 أكتوبر. وأُضيفت إلى قائمة 20 أكتوبر أربعة تحذيرات ملاحية جديدة، أهمها اثنان: حاويات…"},{"d":"2026-10-19","l":"19 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"19 أكتوبر 2026 — خرج الاستهداف من الناقلات إلى سفن الخدمة: بلاغ رسمي بإصابة قُطر بمقذوفين شمال شرق خورفكان، بأضرار وإصابة طفيفة واحدة، مع متابعة المسار. وفي المضيق عادت…"},{"d":"2026-10-18","l":"18 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"18 أكتوبر 2026 — خرج الاستهداف من ممر العبور إلى خط الاقتراب الجنوبي: بلاغ رسمي بإطلاق نار من زورق صغير على ناقلة غاز مسال 140 ميلًا بحريًا جنوب غرب المكلا، وحماية…"},{"d":"2026-10-17","l":"17 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"17 أكتوبر 2026 — غياب البلاغ الرسمي لم يعد مؤشر هدوء: مركز تنسيق العمليات البحرية البريطاني يُفيد بأن معظم هجمات السفن في مضيق هرمز لا تُبلَّغ، فما زال كل عدّ رسمي حدًّا…"},{"d":"2026-10-16","l":"16 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"16 أكتوبر 2026 — أول تقييم رسمي مجمّع: مركز المعلومات البحرية المشترك يوثّق ثماني هجمات بمقذوفات في مضيق هرمز يومي 11 و13 أكتوبر، ويرفع عدّاده إلى 149 حادثة سفن منذ 1…"},{"d":"2026-10-15","l":"15 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"15 أكتوبر 2026 — غرق سفينتين تجاريتين قرب مضيق هرمز في فترة واحدة: الحاوية السنغافورية «GFS PRIDE» بعد إصابة وحريق، وسفينة البضائع الجافة «CAPE DAO» بعد إصابة 23 سبتمبر…"},{"d":"2026-10-14","l":"14 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"14 أكتوبر 2026 — التصعيد في مضيق هرمز مستمر: بلاغان هجوم رسميان في الفترة، وتراكم الحوادث المؤكدة لدى IMO إلى 106. الجديد في هذه الفترة أثر الوقائع على طرق الإمداد:…"},{"d":"2026-10-13","l":"13 أكتوبر 2026","k":"severe","r":"مرتفع جدًا","s":"13 أكتوبر 2026 — قراءة تشغيلية لفترة 12–13 أكتوبر 2026 بتوقيت غرينتش: أربعة بلاغات هجوم رسمية في مضيق هرمز، وإعلان إيراني باستهداف ناقلة إماراتية، وضبط ناقلة مشمولة…"},{"d":"2026-10-12","l":"12 أكتوبر 2026","k":"high","r":"مرتفع","s":"12 أكتوبر 2026 — قراءة تشغيلية لفترة 11–12 أكتوبر 2026 بتوقيت غرينتش: وقائع مؤكدة، ونشرات رسمية، ومؤشرات رقمية مقارنة، مع فصل الحقيقة عن التقدير."}]</script>
+  <div class="statusbar"><span class="sb-risk rk-med">مستوى التهديد: متوسط</span><span class="sb-date">11/11/2026</span><span class="sb-code">رقم الإصدار 11/11/26</span><a class="sb-open" href="reports/2026-11-11.html">التقرير الحالي ←</a></div>
+  <h1>مركز الوعي بالمجال البحري</h1>
+  <p class="lede">إصدار يومي لأمن الملاحة بمؤشراته وخرائطه، ولوحة شهرية مبنية من دفتر أحداث تراكمي، وسجل تاريخي للمقارنة. <a href="about.html">الوصف الكامل في صفحة «عن المنصة»</a>.</p>
+
+  <article class="hero-card">
+      <h2>أهم الأخبار المتعلقة بالأمن البحري</h2>
+      <p class="hc-lede">المستوى العام متوسط. ويظل مضيق هرمز وخليج عُمان والخليج العربي أعلى القطاعات عند مستوى متوسط.</p>
+      <ul class="hc-changes"><li>صنّفت تغذية UKMTO بلاغ 201-26 بتاريخ 10/11 ضمن Attack؛ موضعه غير مكتمل ونتيجته غير ظاهرة.</li><li>أظهر تحذير UKMTO 202-26 بتاريخ 11/11 نشاطًا مشبوهًا يشمل ناقلة في مضيق هرمز؛ الهوية والموضع التفصيلي والنتيجة غير ظاهرة.</li><li>لا تعرض مادة IMO إضافة أحدث من 29 سبتمبر، وتعرض صفحة MSCIO Recent Incidents (0).</li></ul>
+      <p class="hc-action"><b>الإجراء المطلوب:</b> تُراجع السفينة النص الكامل لتحذير UKMTO قبل اتخاذ قرار الإبحار أو تغيير خط السير؛ المادة المتاحة لا تعرض التفاصيل كاملة. · يُرفع تقرير إلى UKMTO أو مركز بلاغات الملاحة عند رصد نشاط مشبوه، مع ذكر الوقت والموقع وبيانات السفينة المعروفة. · لا تُنسب الواقعة إلى جهة ولا تُعامل إصابة ناقلة كحقيقة قبل ظهور بيان رسمي يحددها.</p>
+      <p class="hc-meta">فترة التغطية خلال 24 ساعة السابقة (UTC) · 60 مصدرًا مفحوصًا في ذلك التشغيل · 5 مُستشهدًا · آخر تحديث 11 نوفمبر 2026 · 04:00 حسب التوقيت العالمي</p>
+      <a class="hc-open" href="reports/2026-11-11.html">افتح التقرير كاملًا ←</a>
+    </article>
+
+  <div class="tiles">
+    <div class="tile"><b>31</b><span>إصدار يومي منشور</span></div>
+    <div class="tile"><b>569</b><span>سجل في الدفتر التراكمي</span></div>
+    <div class="tile"><b>62</b><span>مصدرًا معتمدًا في السجل</span></div>
+    <div class="tile"><b>—</b><span>واقعة مصنّفة في الشهر الجاري</span></div>
+  </div>
+
+  <div class="grid">
+    <section class="card" id="month-card">
+      <h3 id="month-title">نوفمبر 2026</h3>
+      <p class="hint">إصدارات الشهر المختار. آخر ثمانية إصدارات افتراضيًا، وزر العرض يُظهر الشهر كاملًا. مفتاح اللون يبيّن مستوى التهديد المسجل في أهم الأخبار المتعلقة بالأمن البحري.</p>
+      <ul class="ar" id="month-rows"><li class="ar-row"><a class="ar-link" href="reports/2026-11-11.html"><span class="ar-date">11/11/2026</span><span class="ar-risk rk-med">متوسط</span><span class="ar-note">11/11/2026 — المستوى العام متوسط.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-10.html"><span class="ar-date">10/11/2026</span><span class="ar-risk rk-severe">مرتفع جدًا</span><span class="ar-note">10/11/2026 — المستوى العام مرتفع جدًا.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-09.html"><span class="ar-date">09/11/2026</span><span class="ar-risk rk-severe">مرتفع جدًا</span><span class="ar-note">09/11/2026 — المستوى العام مرتفع جدًا.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-08.html"><span class="ar-date">08/11/2026</span><span class="ar-risk rk-high">مرتفع</span><span class="ar-note">08/11/2026 — المستوى العام مرتفع.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-07.html"><span class="ar-date">07/11/2026</span><span class="ar-risk rk-high">مرتفع</span><span class="ar-note">07/11/2026 — المستوى العام مرتفع.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-06.html"><span class="ar-date">06/11/2026</span><span class="ar-risk rk-high">مرتفع</span><span class="ar-note">06/11/2026 — المستوى العام مرتفع.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-05.html"><span class="ar-date">05/11/2026</span><span class="ar-risk rk-severe">مرتفع جدًا</span><span class="ar-note">05/11/2026 — المستوى العام مرتفع جدًا.</span></a></li><li class="ar-row"><a class="ar-link" href="reports/2026-11-04.html"><span class="ar-date">04/11/2026</span><span class="ar-risk rk-med">متوسط</span><span class="ar-note">04/11/2026 — المستوى العام متوسط. صدرت تحذيرات UKMTO 194-26 و195-26 في 03/11/2026، وورد بلاغ مهني عن مقتل بحّار هندي في ضربة على قارب داو وبلاغ مهني عن إصابة غرفة محركات…</span></a></li><li class="ar-row ar-extra"><a class="ar-link" href="reports/2026-11-03.html"><span class="ar-date">03/11/2026</span><span class="ar-risk rk-severe">مرتفع جدًا</span><span class="ar-note">03/11/2026 — المستوى العام مرتفع. وأعلى قطاع هو مضيق هرمز وخليج عُمان والخليج العربي. أصدرت UKMTO التحذير 193-26 خلال الفترة، ونشرت النص الكامل للتحذير 192-26 عن إصابة…</span></a></li><li class="ar-row ar-extra"><a class="ar-link" href="reports/2026-11-02.html"><span class="ar-date">02/11/2026</span><span class="ar-risk rk-severe">مرتفع جدًا</span><span class="ar-note">02/11/2026 — أصدرت UKMTO ثلاثة تحذيرات رسمية خلال الفترة، وأظهرت قائمتها بلاغ هجوم داخل مضيق هرمز. وهذا أعلى تصعيد في قطاع مضيق هرمز وخليج عُمان والخليج العربي. ونقلت…</span></a></li><li class="ar-row ar-extra"><a class="ar-link" href="reports/2026-11-01.html"><span class="ar-date">01/11/2026</span><span class="ar-risk rk-med">متوسط</span><span class="ar-note">01/11/2026 — نشرت UKMTO تحذير 190-26 عبر قناتها الرسمية، بينما نقلت مصادر مهنية وإعلامية تقارير عن حريق ناقلات وتسرب نفطي قرب الإمارات؛ لا يثبت ذلك عدد هجمات مستقلًا…</span></a></li></ul>
+      <button type="button" class="more" id="show-all">عرض كل إصدارات الشهر</button>
+    </section>
+    <div class="side">
+      <section class="card" id="archive">
+        <h3>السجل</h3>
+        <p class="hint">اختر السنة ثم الشهر. الأشهر الباهتة بلا إصدارات، والقائمة تُبنى آليًا من الإصدارات المنشورة.</p>
+        <ul class="registry"><li class="yr-item"><details open><summary class="yr">2026 · 31 إصدارًا</summary><ul class="months"><li><span class="mo is-empty" aria-disabled="true">يناير</span></li><li><span class="mo is-empty" aria-disabled="true">فبراير</span></li><li><span class="mo is-empty" aria-disabled="true">مارس</span></li><li><span class="mo is-empty" aria-disabled="true">أبريل</span></li><li><span class="mo is-empty" aria-disabled="true">مايو</span></li><li><span class="mo is-empty" aria-disabled="true">يونيو</span></li><li><span class="mo is-empty" aria-disabled="true">يوليو</span></li><li><span class="mo is-empty" aria-disabled="true">أغسطس</span></li><li><span class="mo is-empty" aria-disabled="true">سبتمبر</span></li><li><button type="button" class="mo" data-month="2026-10">أكتوبر<span class="n">20</span></button></li><li><button type="button" class="mo" data-month="2026-11" aria-current="true">نوفمبر<span class="n">11</span></button></li><li><span class="mo is-empty" aria-disabled="true">ديسمبر</span></li></ul></details></li><li class="yr-item is-empty"><details><summary class="yr">2027 · لا إصدارات</summary><ul class="months"><li><span class="mo is-empty" aria-disabled="true">يناير</span></li><li><span class="mo is-empty" aria-disabled="true">فبراير</span></li><li><span class="mo is-empty" aria-disabled="true">مارس</span></li><li><span class="mo is-empty" aria-disabled="true">أبريل</span></li><li><span class="mo is-empty" aria-disabled="true">مايو</span></li><li><span class="mo is-empty" aria-disabled="true">يونيو</span></li><li><span class="mo is-empty" aria-disabled="true">يوليو</span></li><li><span class="mo is-empty" aria-disabled="true">أغسطس</span></li><li><span class="mo is-empty" aria-disabled="true">سبتمبر</span></li><li><span class="mo is-empty" aria-disabled="true">أكتوبر</span></li><li><span class="mo is-empty" aria-disabled="true">نوفمبر</span></li><li><span class="mo is-empty" aria-disabled="true">ديسمبر</span></li></ul></details></li><li class="yr-item is-empty"><details><summary class="yr">2028 · لا إصدارات</summary><ul class="months"><li><span class="mo is-empty" aria-disabled="true">يناير</span></li><li><span class="mo is-empty" aria-disabled="true">فبراير</span></li><li><span class="mo is-empty" aria-disabled="true">مارس</span></li><li><span class="mo is-empty" aria-disabled="true">أبريل</span></li><li><span class="mo is-empty" aria-disabled="true">مايو</span></li><li><span class="mo is-empty" aria-disabled="true">يونيو</span></li><li><span class="mo is-empty" aria-disabled="true">يوليو</span></li><li><span class="mo is-empty" aria-disabled="true">أغسطس</span></li><li><span class="mo is-empty" aria-disabled="true">سبتمبر</span></li><li><span class="mo is-empty" aria-disabled="true">أكتوبر</span></li><li><span class="mo is-empty" aria-disabled="true">نوفمبر</span></li><li><span class="mo is-empty" aria-disabled="true">ديسمبر</span></li></ul></details></li></ul>
+      </section>
+    </div>
+  </div>
+
+</div>
+<section class="card nf" id="nf404" hidden><h1>الصفحة غير موجودة</h1><p>الرابط المطلوب لا يقابل صفحة منشورة على هذا الموقع. هذه الروابط المتاحة الآن:</p><ul class="nf-list"><li><a href=""><span class="nf-t">الرئيسية والأرشيف</span><span class="nf-p">/</span></a></li><li><a href="reports/cumulative-2026.html"><span class="nf-t">السجل التراكمي</span><span class="nf-p">/reports/cumulative-2026.html</span></a></li><li><a href="reports/monthly-2026-10.html"><span class="nf-t">اللوحة الشهرية</span><span class="nf-p">/reports/monthly-2026-10.html</span></a></li><li><a href="sources.html"><span class="nf-t">المصادر والمراجع</span><span class="nf-p">/sources.html</span></a></li><li><a href="additions.html"><span class="nf-t">إضافات</span><span class="nf-p">/additions.html</span></a></li><li><a href="reports/2026-11-11.html"><span class="nf-t">التقرير اليومي — 11/11/2026</span><span class="nf-p">/reports/2026-11-11.html</span></a></li><li><a href="reports/2026-11-10.html"><span class="nf-t">التقرير اليومي — 10/11/2026</span><span class="nf-p">/reports/2026-11-10.html</span></a></li><li><a href="reports/2026-11-09.html"><span class="nf-t">التقرير اليومي — 09/11/2026</span><span class="nf-p">/reports/2026-11-09.html</span></a></li><li><a href="reports/2026-11-08.html"><span class="nf-t">التقرير اليومي — 08/11/2026</span><span class="nf-p">/reports/2026-11-08.html</span></a></li><li><a href="reports/2026-11-07.html"><span class="nf-t">التقرير اليومي — 07/11/2026</span><span class="nf-p">/reports/2026-11-07.html</span></a></li><li><a href="reports/2026-11-06.html"><span class="nf-t">التقرير اليومي — 06/11/2026</span><span class="nf-p">/reports/2026-11-06.html</span></a></li><li><a href="reports/2026-11-05.html"><span class="nf-t">التقرير اليومي — 05/11/2026</span><span class="nf-p">/reports/2026-11-05.html</span></a></li><li><a href="reports/2026-11-04.html"><span class="nf-t">التقرير اليومي — 04/11/2026</span><span class="nf-p">/reports/2026-11-04.html</span></a></li><li><a href="reports/2026-11-03.html"><span class="nf-t">التقرير اليومي — 03/11/2026</span><span class="nf-p">/reports/2026-11-03.html</span></a></li><li><a href="reports/2026-11-02.html"><span class="nf-t">التقرير اليومي — 02/11/2026</span><span class="nf-p">/reports/2026-11-02.html</span></a></li><li><a href="reports/2026-11-01.html"><span class="nf-t">التقرير اليومي — 01/11/2026</span><span class="nf-p">/reports/2026-11-01.html</span></a></li><li><a href="reports/2026-10-31.html"><span class="nf-t">التقرير اليومي — 31 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-31.html</span></a></li><li><a href="reports/2026-10-30.html"><span class="nf-t">التقرير اليومي — 30 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-30.html</span></a></li><li><a href="reports/2026-10-29.html"><span class="nf-t">التقرير اليومي — 29 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-29.html</span></a></li><li><a href="reports/2026-10-28.html"><span class="nf-t">التقرير اليومي — 28 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-28.html</span></a></li><li><a href="reports/2026-10-27.html"><span class="nf-t">التقرير اليومي — 27 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-27.html</span></a></li><li><a href="reports/2026-10-26.html"><span class="nf-t">التقرير اليومي — 26 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-26.html</span></a></li><li><a href="reports/2026-10-25.html"><span class="nf-t">التقرير اليومي — 25 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-25.html</span></a></li><li><a href="reports/2026-10-24.html"><span class="nf-t">التقرير اليومي — 24 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-24.html</span></a></li><li><a href="reports/2026-10-23.html"><span class="nf-t">التقرير اليومي — 23 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-23.html</span></a></li><li><a href="reports/2026-10-22.html"><span class="nf-t">التقرير اليومي — 22 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-22.html</span></a></li><li><a href="reports/2026-10-21.html"><span class="nf-t">التقرير اليومي — 21 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-21.html</span></a></li><li><a href="reports/2026-10-20.html"><span class="nf-t">التقرير اليومي — 20 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-20.html</span></a></li><li><a href="reports/2026-10-19.html"><span class="nf-t">التقرير اليومي — 19 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-19.html</span></a></li><li><a href="reports/2026-10-18.html"><span class="nf-t">التقرير اليومي — 18 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-18.html</span></a></li><li><a href="reports/2026-10-17.html"><span class="nf-t">التقرير اليومي — 17 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-17.html</span></a></li><li><a href="reports/2026-10-16.html"><span class="nf-t">التقرير اليومي — 16 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-16.html</span></a></li><li><a href="reports/2026-10-15.html"><span class="nf-t">التقرير اليومي — 15 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-15.html</span></a></li><li><a href="reports/2026-10-14.html"><span class="nf-t">التقرير اليومي — 14 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-14.html</span></a></li><li><a href="reports/2026-10-13.html"><span class="nf-t">التقرير اليومي — 13 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-13.html</span></a></li><li><a href="reports/2026-10-12.html"><span class="nf-t">التقرير اليومي — 12 أكتوبر 2026</span><span class="nf-p">/reports/2026-10-12.html</span></a></li></ul><p><a class="nf-back" href="">العودة إلى الرئيسية والأرشيف</a></p></section><script>(function(){var K={"/":1,"reports/cumulative-2026.html":1,"reports/monthly-2026-10.html":1,"/sources.html":1,"/additions.html":1,"reports/2026-11-11.html":1,"reports/2026-11-10.html":1,"reports/2026-11-09.html":1,"reports/2026-11-08.html":1,"reports/2026-11-07.html":1,"reports/2026-11-06.html":1,"reports/2026-11-05.html":1,"reports/2026-11-04.html":1,"reports/2026-11-03.html":1,"reports/2026-11-02.html":1,"reports/2026-11-01.html":1,"reports/2026-10-31.html":1,"reports/2026-10-30.html":1,"reports/2026-10-29.html":1,"reports/2026-10-28.html":1,"reports/2026-10-27.html":1,"reports/2026-10-26.html":1,"reports/2026-10-25.html":1,"reports/2026-10-24.html":1,"reports/2026-10-23.html":1,"reports/2026-10-22.html":1,"reports/2026-10-21.html":1,"reports/2026-10-20.html":1,"reports/2026-10-19.html":1,"reports/2026-10-18.html":1,"reports/2026-10-17.html":1,"reports/2026-10-16.html":1,"reports/2026-10-15.html":1,"reports/2026-10-14.html":1,"reports/2026-10-13.html":1,"reports/2026-10-12.html":1};var p=location.pathname.replace(/\/index\.html$/,'/');if(!K[p]){var nf=document.getElementById('nf404');var w=document.querySelector('.wrap');if(nf){if(w){w.setAttribute('hidden','');}nf.removeAttribute('hidden');document.title='الصفحة غير موجودة — مركز الوعي بالمجال البحري';}}})();</script>
+<footer class="sn-foot no-print">
+  <div class="sf-inner">
+    <span><span data-i18n-html="foot1">مركز الوعي بالمجال البحري — تقارير أمن الملاحة — مملكة البحرين</span> · الرئيسية</span>
+  </div>
+</footer>
+<script>
+(function(){
+var LS=window.localStorage, body=document.body;
+function save(k,v){try{LS.setItem(k,v);}catch(e){}}
+var reportBtn=document.getElementById('btn-theme'), siteBtn=document.getElementById('sn-theme');
+// إزالة مستمع الزر الأصلي داخل التقرير بمضاعفة العقدة لمنع الازدواج
+if(reportBtn){var clone=reportBtn.cloneNode(true);reportBtn.parentNode.replaceChild(clone,reportBtn);reportBtn=clone;}
+function isLight(){return body.classList.contains('daylight');}
+var SCALES=[1,1.12,1.25], SCALE_NAMES=['حجم الخط: عادي','حجم الخط: أكبر','حجم الخط: أكبر حجم'];
+function currentScale(){var s=parseFloat(LS.getItem('mn-scale')||'1');return (s&&s>0)?s:1;}
+function scaleIdx(){var i=SCALES.indexOf(currentScale());return i<0?0:i;}
+function paintScaleBtn(){
+  var b=document.getElementById('sn-scale'); if(!b) return;
+  var i=scaleIdx(); b.title=SCALE_NAMES[i];
+  var t=document.getElementById('sn-scale-text'); if(t) t.textContent=SCALE_NAMES[i];
+}
+function paint(){
+  paintLang();
+  paintScaleBtn();
+}
+function toggleTheme(){var on=body.classList.toggle('daylight');save('mn-theme',on?'light':'dark');paint();}
+if(reportBtn) reportBtn.addEventListener('click',function(e){e.preventDefault();toggleTheme();});
+if(siteBtn) siteBtn.addEventListener('click',function(e){e.preventDefault();toggleTheme();});
+var scaleBtn=document.getElementById('sn-scale');
+if(scaleBtn) scaleBtn.addEventListener('click',function(e){e.preventDefault();
+  var s=SCALES[(scaleIdx()+1)%SCALES.length]; save('mn-scale',s);
+  body.style.zoom=(s===1?'':s); paintScaleBtn();});
+paintScaleBtn();
+var I18N={ar:{"chg_confirmation": "تأكيد", "chg_denial": "نفي", "row_one_sided_account": "رواية من طرف واحد", "row_account": "رواية", "row_declaration": "إعلان", "row_official_report": "بلاغ رسمي", "row_unconfirmed_report": "بلاغ غير مؤكد", "row_report": "بلاغ", "row_professional_report": "تقرير مهني", "area_iran": "إيران", "hist_aden_taiz": "عدن وتعز ومخزون الأدوية", "hist_latest_official": "أحدث بلاغ رسمي", "hist_three_incidents": "عن ثلاث وقائع في مضيق هرمز وخليج عُمان والخليج العربي مع استمرار تضارب روايات الألغام والناقلات", "hist_incidents_period": "عن وقائع في مضيق هرمز وخليج عُمان والخليج العربي داخل الفترة", "hist_quad_criticism": "عنوان إعلامي عن انتقاد مجموعة رباعية لقيود التصدير وإغلاق مضيق هرمز", "hist_media_reopening": "نقل إعلامي؛ لم يُثبت تنفيذ الفتح (01-02 و01-03؛ موثوقية متوسطة وتصديق متوسط)", "hist_leak_stopped": "نقل مهني يفيد توقف التسرب واستمرار أعمال التنظيف (01-06؛ موثوقية متوسطة وتصديق متوسط)", "hist_possible_attack_hormuz": "أبلغت عن هجوم محتمل على سفينة داخل مضيق هرمز", "hist_basis_assessment_1102": "أساس التقدير: يستند التقدير إلى صدور ثلاثة تحذيرات رسمية خلال الفترة، بينها بلاغ هجوم داخل مضيق هرمز، وإلى إدانة رسمية لهجوم على ناقلة غاز. ولا ترفع الروايات غير المؤكدة مستوى التهديد (02-01 إلى 02-05؛ موثوقية جيدة وتصديق جيد).", "hist_fifth_fleet": "أعلن الأسطول الخامس الأمريكي تقديم مساندة لبحّارة واجهوا عطلًا في المحرك في بحر العرب", "hist_coalition_intercept": "أعلن التحالف المشترك اعتراض وتدمير صاروخ باليستي وطائرة مسيّرة أُطلقا باتجاه المنطقة الجنوبية، وتدمير مصادر في الحديدة وذمار", "hist_bahrain_condemn": "أعلنت وزارة الخارجية البحرينية إدانتها لهجوم استهدف ناقلة غاز قطرية في الخليج العربي", "hist_three_warnings_1102": "ثلاثة تحذيرات رسمية خلال الفترة، وأظهرت قائمتها بلاغ هجوم داخل مضيق هرمز. وهذا أعلى تصعيد في قطاع مضيق هرمز وخليج عُمان والخليج العربي. ونقلت مصادر إيرانية ووسائل متابعة أن ناقلتي نفط انفجرتا بعد اصطدامهما المزعوم بألغام بحرية، من دون تأكيد رسمي مستقل (02-01 إلى 02-06).", "hist_one_sided_repeat": "رواية من طرف واحد، والتكرار لا يعادل تأكيدًا مستقلًا (02-06؛ موثوقية متوسطة وتصديق متوسط)", "hist_incident_warning_list": "عن واقعة داخل مضيق هرمز في قائمة تحذيرات", "hist_incident_hormuz_report_dated": "عن واقعة داخل مضيق هرمز، وبلاغ بتاريخ", "hist_incident_72nm_khafji": "عن واقعة على بعد 72 ميلًا بحريًا شرق رأس الخفجي في السعودية", "hist_incident_72nm_detail": "عن واقعة على بعد 72 ميلًا بحريًا شرق رأس الخفجي، بلا تفاصيل عن السفن أو الضرر في النص المتاح (02-05 و02-15؛ موثوقية جيدة وتصديق جيد)", "hist_projectiles_tug": "نقل إعلامي عن مقذوفين مجهولين باتجاه ناقلة، وتقرير عن إصابة قاطرة بحرية في المضيق، بلا نص رسمي مطابق (02-08 و02-16؛ موثوقية متوسطة وتصديق متوسط)", "hist_hijack_fishing_somalia": "اختطاف سفينة صيد إيرانية مع 23 فردًا على متنها قرب السواحل الشمالية الشرقية للصومال", "hist_total_125_24": "المجموع بقي 125 حادثة مؤكدة و24 وفاة (03-04؛ موثوقية عالية وتصديق مرتفع)", "hist_two_groups_one": "عند وجود مجموعتين مؤكَّدتين في القطاع الأول، واليوم ثبتت مجموعة مؤكدة واحدة فقط. تظل الروايات غير المؤكدة قابلة للرفع حال ثبوتها رسميًا (03-05 و03-08؛ موثوقية متوسطة وتصديق متوسط).", "hist_horn_medium": "مستوى التهديد في القرن الأفريقي: متوسط. وردت رواية عن اختطاف سفينة صيد مقابل الساحل الصومالي بلا تأكيد رسمي منشور (03-09؛ موثوقية متوسطة وتصديق متوسط).", "hist_bab_low": "مستوى التهديد في باب المندب والبحر الأحمر: منخفض. لم تُسجَّل واقعة بحرية مؤهلة جديدة؛ البند الوحيد في المصادر المستخدمة هو تقدم بري في اليمن (03-11؛ موثوقية متوسطة وتصديق متوسط).", "hist_128_24": "عند 128 حادثة مؤكدة و24 وفاة مؤكدة بتاريخ 3/11/2026.", "hist_change_factors_1104": "عوامل التغيير: تأكيد رسمي داخل المضيق يرفعه، وغياب بلاغ مؤهل يخفضه.", "hist_irgc_four_tankers": "أعلن الحرس الثوري الإيراني تدمير أربع ناقلات نفط بألغام بحرية داخل مضيق هرمز، وضبط سفينتين، وإسقاط مسيّرة أمريكية من نوع MQ-9؛ الإعلان طرفي بلا تأكيد مستقل.", "hist_reassess_routes": "أعيدوا تقييم مسارات الاقتراب من مضيق هرمز وحدّدوا نقاط انتظار خارج نطاق الإعلان.", "hist_change_factors_1105": "عوامل التغيير: تأكيد رسمي لخسائر داخل المضيق يرفعه، وظهور ما يثبت أن الإعلان غير دقيق يخفضه.", "hist_straits_live_five": "أفادت straits.live بتقارير إيرانية عن إصابة خمس ناقلات بألغام بحرية قرب مضيق هرمز؛ لم يؤكد", "hist_iranian_five_tankers": "رواية إيرانية عن إصابة خمس ناقلات بألغام بحرية قرب مضيق هرمز خلال 24 ساعة", "hist_incident_50nm_shamal": "عن واقعة على بعد 50 ميلًا بحريًا شمال مدينة الشمال ووصفها بأنها هجوم", "hist_change_factors_text": "عوامل التغيير: يرفعه نص", "hist_or_official_denial": "أو نفي رسمي موثق للروايات.", "hist_continuing_latest": "مستمر؛ آخرها 2026-11-03", "hist_stray_cargo_accounts": "عن سفينة بضائع سائبة وروايات عن ناقلتين وسفينة شحن قرب مضيق هرمز وخليج عُمان دون تأكيد مستقل", "hist_stray_military_accounts": "عن سفينة بضائع سائبة وقوات عسكرية، مع روايات عن ناقلتين وسفينة شحن", "hist_incident_uae_rescue": "عنوان عن حادث بحري قريبًا من ساحل الإمارات وبلاغ إنقاذ 22 شخصًا من حريق في بحر عُمان", "hist_two_headlines_material": "تجمع المادة بين عنواني", "listed_fragment": "أدرجت", "top_news_page": "أهم الأخبار — في صفحة", "two_headlines": "عنوانان: نشاط مشبوه وهجوم", "about_attack_khasab_hormuz": "عن هجوم ونشاط مشبوه قرب خصب وهرمز مع روايات أخرى عن حرائق وألغام بلا تأكيد مستقل", "about_stray_cargo_vessel": "عن واقعة تشمل سفينة بضائع سائبة وقوات عسكرية", "about_late_attack_hormuz": "عن واقعة متأخرة الإبلاغ مصنفة هجومًا في مضيق هرمز", "media_tanker_mines_hormuz": "عناوين إعلامية عن ناقلة أو ناقلات احترقت أو أصيبت بألغام في مضيق هرمز", "headline_attack_hormuz": "عنوانًا عن واقعة مصنفة هجومًا في مضيق هرمز؛ لا اسم سفينة أو نتيجة.", "early_warning_signs": "علامات الإنذار المبكر", "skip": "الانتقال إلى المحتوى", "menu": "القائمة", "home": "الرئيسية", "special": "التقارير الخاصة", "archive": "الأرشيف", "monthly": "اللوحة الشهرية", "cumulative": "السجل التراكمي", "sources": "المصادر والمراجع", "additions": "الإضافات", "scale": "حجم الخط", "theme": "المظهر", "print-off": "الطباعة غير مفعّلة حاليًا", "no-en-note": "النسخة الإنجليزية متاحة ابتداءً من 29 أكتوبر 2026", "en-open": "English edition", "theme-dark": "المظهر: ليلي", "theme-light": "المظهر: نهاري", "print": "طباعة / PDF", "lang": "اللغة", "no-en": "النسخة الإنجليزية لهذا الإصدار غير متاحة بعد."},en:{"chg_confirmation": "confirmation", "chg_denial": "denial", "row_one_sided_account": "one-sided account", "row_account": "account", "row_declaration": "declaration", "row_official_report": "official report", "row_unconfirmed_report": "unconfirmed report", "row_report": "report", "row_professional_report": "professional report", "area_iran": "Iran", "hist_aden_taiz": "Aden, Taiz, and the medicine stock", "hist_latest_official": "the latest official report", "hist_three_incidents": "about three incidents in the Strait of Hormuz, the Gulf of Oman, and the Arabian Gulf, while conflicting accounts of mines and tankers continue", "hist_incidents_period": "about incidents in the Strait of Hormuz, the Gulf of Oman, and the Arabian Gulf within the period", "hist_quad_criticism": "a media headline about a quad group's criticism of export restrictions and the closure of the Strait of Hormuz", "hist_media_reopening": "media reporting; the reopening was not proven to have been carried out (01-02 and 01-03; medium reliability, medium corroboration)", "hist_leak_stopped": "professional reporting indicating the leak has stopped and cleanup work continues (01-06; medium reliability, medium corroboration)", "hist_possible_attack_hormuz": "reported a possible attack on a vessel inside the Strait of Hormuz", "hist_basis_assessment_1102": "Basis of the assessment: it rests on three official warnings issued during the period, including a report of an attack inside the Strait of Hormuz, and on an official condemnation of an attack on a gas tanker. Unconfirmed accounts do not raise the threat level (02-01 to 02-05; good reliability, good corroboration).", "hist_fifth_fleet": "the United States Fifth Fleet announced assistance to sailors who faced an engine failure in the Arabian Sea", "hist_coalition_intercept": "the joint coalition announced the interception and destruction of a ballistic missile and an unmanned aerial vehicle launched towards the southern region, and the destruction of sources in Al Hudaydah and Dhamar", "hist_bahrain_condemn": "the Bahraini Ministry of Foreign Affairs announced its condemnation of an attack targeting a Qatari gas tanker in the Arabian Gulf", "hist_three_warnings_1102": "three official warnings during the period, and their list showed a report of an attack inside the Strait of Hormuz. This is the highest escalation in the Strait of Hormuz, the Gulf of Oman, and the Arabian Gulf sector. Iranian sources and monitoring outlets reported that two oil tankers exploded after their alleged collision with naval mines, without independent official confirmation (02-01 to 02-06).", "hist_one_sided_repeat": "a one-sided account, and repetition does not amount to independent confirmation (02-06; medium reliability, medium corroboration)", "hist_incident_warning_list": "about an incident inside the Strait of Hormuz on a warnings list", "hist_incident_hormuz_report_dated": "about an incident inside the Strait of Hormuz, and a report dated", "hist_incident_72nm_khafji": "about an incident 72 nautical miles east of Ras Al Khafji in Saudi Arabia", "hist_incident_72nm_detail": "about an incident 72 nautical miles east of Ras Al Khafji, with no details on the vessels or the damage in the available text (02-05 and 02-15; good reliability, good corroboration)", "hist_projectiles_tug": "media reporting of two unidentified projectiles towards a tanker, and a report of a marine tug being hit in the strait, with no matching official text (02-08 and 02-16; medium reliability, medium corroboration)", "hist_hijack_fishing_somalia": "the hijacking of an Iranian fishing vessel with 23 people aboard near the north-eastern coast of Somalia", "hist_total_125_24": "the total remained 125 confirmed incidents and 24 deaths (03-04; high reliability, high corroboration)", "hist_two_groups_one": "while the first sector had two confirmed groups, only one confirmed group was established today. Unconfirmed accounts remain capable of raising the level once officially established (03-05 and 03-08; medium reliability, medium corroboration).", "hist_horn_medium": "Threat level in the Horn of Africa: medium. An account was reported of a fishing vessel hijacked off the Somali coast without published official confirmation (03-09; medium reliability, medium corroboration).", "hist_bab_low": "Threat level in Bab al-Mandab and the Red Sea: low. No new qualifying maritime incident was recorded; the only item in the sources used is a ground advance in Yemen (03-11; medium reliability, medium corroboration).", "hist_128_24": "at 128 confirmed incidents and 24 confirmed deaths as of 3/11/2026.", "hist_change_factors_1104": "Change factors: official confirmation inside the strait raises it, and the absence of a qualifying report lowers it.", "hist_irgc_four_tankers": "Iran's Revolutionary Guard announced the destruction of four oil tankers by naval mines inside the Strait of Hormuz, the seizure of two vessels, and the downing of a United States MQ-9 drone; the announcement is one-sided with no independent confirmation.", "hist_reassess_routes": "Reassess approach routes to the Strait of Hormuz and set waiting points outside the declared area.", "hist_change_factors_1105": "Change factors: official confirmation of losses inside the strait raises it, and evidence that the announcement is inaccurate lowers it.", "hist_straits_live_five": "straits.live noted Iranian reports of five tankers being hit by naval mines near the Strait of Hormuz; it did not confirm", "hist_iranian_five_tankers": "an Iranian account of five tankers being hit by naval mines near the Strait of Hormuz within 24 hours", "hist_incident_50nm_shamal": "about an incident 50 nautical miles north of the town of Ash Shamal, described as an attack", "hist_change_factors_text": "Change factors: it is raised by a text", "hist_or_official_denial": "or a documented official denial of the accounts.", "hist_continuing_latest": "continuing; the latest on 2026-11-03", "hist_stray_cargo_accounts": "about a stray cargo vessel and accounts of two tankers and a cargo ship near the Strait of Hormuz and the Gulf of Oman without independent confirmation", "hist_stray_military_accounts": "about a stray cargo vessel and military forces, with accounts of two tankers and a cargo ship", "hist_incident_uae_rescue": "a headline about a maritime incident near the coast of the United Arab Emirates and a report of 22 people rescued from a fire in the Gulf of Oman", "hist_two_headlines_material": "the material combines two headlines", "listed_fragment": "listed", "top_news_page": "Top news — on page", "two_headlines": "Two headlines: suspicious activity and an attack", "about_attack_khasab_hormuz": "about an attack and suspicious activity near Khasab and Hormuz, with further accounts of fires and mines without independent confirmation", "about_stray_cargo_vessel": "about an incident involving a stray cargo vessel and military forces", "about_late_attack_hormuz": "about a late-reported incident classified as an attack in the Strait of Hormuz", "media_tanker_mines_hormuz": "media headlines about one or more tankers that burned or were struck by mines in the Strait of Hormuz", "headline_attack_hormuz": "a headline about an incident classified as an attack in the Strait of Hormuz; no vessel name or outcome.", "early_warning_signs": "Early warning signs", "skip": "Skip to content", "menu": "Menu", "home": "Home", "special": "Special reports", "archive": "Archive", "monthly": "Monthly dashboard", "cumulative": "Cumulative record", "sources": "Sources & references", "additions": "Additions", "scale": "Font size", "theme": "Theme", "print-off": "Printing is currently disabled", "no-en-note": "The English edition is available from 29 October 2026", "en-open": "English edition", "theme-dark": "Theme: night", "theme-light": "Theme: day", "print": "Print / PDF", "lang": "Language", "no-en": "The English edition of this report is not available yet."}};
+function pageLang(){var lock=document.documentElement.getAttribute('data-lang');if(lock)return lock;var p=location.pathname;if(p.indexOf('reports/en/')===0)return 'en';if(p.indexOf('/reports/')===0&&/^\d{4}-\d{2}-\d{2}\.html$/.test(p.slice(9)))return 'ar';return '';}
+function currentLang(){var pl=pageLang();if(pl)return pl;var l=LS.getItem('mn-lang');return (l==='en')?'en':'ar';}
+function i18nTxt(key){var d=I18N[currentLang()];return (d&&d[key])||I18N.ar[key]||'';}
+var _b=document.querySelector('.sn-name'), _s=document.querySelector('.sn-name em');
+var BRAND_TXT=_b?(_b.childNodes[0].nodeValue||'').trim():'', BRAND_SUB_TXT=_s?_s.textContent.trim():'';
+function paintLang(){
+  var l=currentLang();
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var v=i18nTxt(el.getAttribute('data-i18n'));if(v)el.textContent=v;});
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var v=i18nTxt(el.getAttribute('data-i18n-aria'));if(v)el.setAttribute('aria-label',v);});
+  var f1=document.querySelector('[data-i18n-html="foot1"]'); if(f1) f1.textContent=BRAND_TXT+' — '+BRAND_SUB_TXT;
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('on', b.getAttribute('data-lang')===l);});
+  var rb=document.getElementById('btn-theme'), sb=document.getElementById('sn-theme');
+  var L=(l==='en'), light=body.classList.contains('daylight');
+  if(rb) rb.textContent = light ? (L?'Night mode':'النمط الليلي') : (L?'Day mode':'النمط النهاري');
+  var st=document.getElementById('sn-theme-text');
+  if(st) st.textContent = light ? i18nTxt('theme-light') : i18nTxt('theme-dark');
+}
+function note(msg){
+  var n=document.getElementById('sn-lang-note');
+  if(!n){n=document.createElement('div');n.id='sn-lang-note';n.className='sn-lang-note no-print';document.body.appendChild(n);}
+  n.textContent=msg; n.style.display='block'; setTimeout(function(){n.style.display='none';},4600);
+}
+function routeLang(l){
+  var m=location.pathname.match(/^\/reports\/(en\/)?(\d{4}-\d{2}-\d{2})\.html$/);
+  if(!m) return;
+  var isEn=!!m[1], date=m[2];
+  if(l==='en'&&!isEn){
+    fetch('/reports/en/index.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      var list=(d&&d.dates)||[];
+      if(list.indexOf(date)>=0){ location.href='reports/en/'+date+'.html'; } else { note(i18nTxt('no-en')); }
+    }).catch(function(){ note(i18nTxt('no-en')); });
+  } else if(l==='ar'&&isEn){
+    location.href='reports/'+date+'.html';
+  }
+}
+function applyLang(l,go){
+  try{LS.setItem('mn-lang',l);}catch(e){}
+  var pl=pageLang();
+  if(pl&&l!==pl){ if(go) routeLang(l); return; }
+  var root=document.documentElement;
+  root.lang=(l==='en')?'en':'ar'; root.dir=(l==='en')?'ltr':'rtl';
+  body.classList.toggle('lang-en', l==='en');
+  paintLang(); if(go) routeLang(l);
+}
+document.querySelectorAll('[data-lang]').forEach(function(b){
+  b.addEventListener('click',function(e){e.preventDefault();applyLang(b.getAttribute('data-lang'),true);});
+});
+// ك-228 (2026-11-11): زر «EN» كان يحمل data-go بلا مستمع نقر، فلم ينقل القارئ إلى
+// النسخة الإنجليزية. الربط هنا يسري على كل الصفحات لأن الشريط مشترك.
+document.querySelectorAll('[data-go]').forEach(function(b){
+  b.addEventListener('click',function(e){var u=b.getAttribute('data-go');if(u){e.preventDefault();location.href=u;}});
+});
+paintLang();
+paint();
+// رابط التخطي: أول عنوان ظاهر في الصفحة (أو المتن)، فلا يمرّ قارئ لوحة المفاتيح على الشريط كله في كل صفحة
+var skip=document.getElementById('sn-skip');
+if(skip){
+  var hs=[].slice.call(document.querySelectorAll('h1')).filter(function(h){return h.offsetParent!==null;});
+  var tg=hs[0]||document.querySelector('main,[role=main]');
+  if(tg){ if(!tg.id) tg.id='sn-main'; tg.setAttribute('tabindex','-1'); skip.setAttribute('href','#'+tg.id); }
+  else { skip.parentNode.removeChild(skip); }
+}
+// تذكّر آخر تقرير فُتح
+var p=location.pathname;
+if(p.indexOf('/reports/')===0){
+  var t=(document.title||'').split(/[|·]/)[0].trim();
+  save('mn-last',JSON.stringify({path:p,title:t,at:new Date().toISOString()}));
+}
+})();
+</script>
+<script>
+(function(){
+var LS=window.localStorage;
+function get(k,d){try{return LS.getItem(k)||d;}catch(e){return d;}}
+function set(k,v){try{LS.setItem(k,v);}catch(e){}}
+function paintTheme(){
+  var light=document.body.classList.contains('daylight');
+  document.querySelectorAll('#p-theme button').forEach(function(b){
+    b.classList.toggle('on', (b.getAttribute('data-theme')==='light')===light);
+  });
+  var sb=document.getElementById('sn-theme'); if(sb) sb.textContent = light?'المظهر: نهاري':'المظهر: ليلي';
+}
+function paintScale(){
+  var s=parseFloat(get('mn-scale','1'));
+  document.querySelectorAll('[data-scale]').forEach(function(b){
+    b.classList.toggle('on', parseFloat(b.getAttribute('data-scale'))===s);
+  });
+}
+document.querySelectorAll('#p-theme button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var light=b.getAttribute('data-theme')==='light';
+    document.body.classList.toggle('daylight',light); set('mn-theme',light?'light':'dark'); paintTheme();
+  });
+});
+document.querySelectorAll('[data-scale]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var s=parseFloat(b.getAttribute('data-scale')); set('mn-scale',s);
+    document.body.style.zoom=(s===1?'':s); paintScale();
+  });
+});
+paintTheme(); paintScale();
+/* ── السجل: تبديل الشهر داخل الصفحة بلا إعادة تحميل (م-01 د) ── */
+var AR_M=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+var IDX=[];
+try{IDX=JSON.parse(document.getElementById('reports-index').textContent)||[];}catch(e){IDX=[];}
+function monthLabel(k){var p=k.split('-');return AR_M[parseInt(p[1],10)-1]+' '+p[0];}
+function rowHtml(o,extra){
+  return '<li class="ar-row'+(extra?' ar-extra':'')+'"><a class="ar-link" href="reports/'+o.d+'.html">'
+    +'<span class="ar-date">'+o.l+'</span>'
+    +'<span class="ar-risk rk-'+o.k+'">'+o.r+'</span>'
+    +'<span class="ar-note">'+o.s+'</span></a></li>';
+}
+function renderMonth(k){
+  var list=document.getElementById('month-rows'), t=document.getElementById('month-title'),
+      more=document.getElementById('show-all');
+  if(!list) return;
+  var items=IDX.filter(function(o){return o.d.slice(0,7)===k;});
+  list.classList.remove('open');
+  list.innerHTML=items.length?items.map(function(o,i){return rowHtml(o,i>=8);}).join('')
+                              :'<li class="ar-empty">لا توجد تقارير في هذا الشهر.</li>';
+  if(t) t.textContent=monthLabel(k);
+  if(more) more.hidden=items.length<=8;
+  document.querySelectorAll('.mo[data-month]').forEach(function(b){
+    b.setAttribute('aria-current', b.getAttribute('data-month')===k ? 'true' : 'false');
+  });
+}
+document.querySelectorAll('.mo[data-month]').forEach(function(b){
+  b.addEventListener('click',function(){renderMonth(b.getAttribute('data-month'));});
+});
+var more=document.getElementById('show-all');
+if(more) more.addEventListener('click',function(){
+  document.getElementById('month-rows').classList.add('open'); more.hidden=true;
+});
+})();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('.site-nav'); if (!nav) return;
+  var btn = nav.querySelector('.sn-menu'), panel = nav.querySelector('.sn-panel');
+  var root = document.documentElement;
+  function measure(){
+    root.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    var b = document.querySelector('.topbar');
+    root.style.setProperty('--bar-h', (b && getComputedStyle(b).display !== 'none' ? b.offsetHeight : 0) + 'px');
+  }
+  if (btn && panel){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && nav.classList.contains('open')){
+        nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus();
+      }
+    });
+    nav.addEventListener('focusout', function(e){
+      if (nav.classList.contains('open') && !nav.contains(e.relatedTarget)){
+        nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(nav);
+  addEventListener('resize', measure); measure();
+})();
+</script>
+
+<p style="max-width:920px;margin:16px auto;padding:0 16px;font-size:14px;color:#9fb0c4;text-align:center"><a href="feeds-status.html" style="color:#7fd6cc">حالة التغذيات: فاشلة، 59 من 81 سليمة، بتاريخ 2026-11-15</a></p><p style="max-width:920px;margin:8px auto;padding:0 16px;font-size:14px;color:#e0b25a;text-align:center">نسخة ثابتة (لقطة) بتاريخ 2026-11-15، ولا تُحدَّث تلقائيًا.</p></body></html>
