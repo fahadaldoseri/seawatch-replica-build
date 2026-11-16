@@ -426,6 +426,57 @@ def write_feeds_status(out_dir, path):
     return info
 
 
+def write_snapshot_notice(out_dir, built_at):
+    """يضيف إلى الصفحة الرئيسية سطرًا يُعلن أن النسخة لقطة ثابتة بتاريخ البناء، ولا تُحدَّث تلقائيًا."""
+    home = os.path.join(out_dir, "index.html")
+    if not os.path.exists(home):
+        return False
+    with open(home, encoding="utf-8") as f:
+        text = f.read()
+    if text.count("</body>") != 1:
+        return False
+    note = html.escape(f"نسخة ثابتة (لقطة) بتاريخ {built_at}، ولا تُحدَّث تلقائيًا.")
+    line = (f'<p style="max-width:920px;margin:8px auto;padding:0 16px;font-size:14px;'
+            f'color:#e0b25a;text-align:center">{note}</p>')
+    with open(home, "w", encoding="utf-8") as f:
+        f.write(text.replace("</body>", line + "</body>"))
+    return True
+
+
+# إصلاحات مرئية تُضاف إلى كل صفحة عند البناء، ولا تغيّر المحتوى المنقول:
+# 1) روابط بلا صنف (مثل روابط مقدمة الصفحة) كانت بالأزرق الافتراضي على خلفية داكنة، تباينها نحو 2.1.
+# 2) زر المظهر في الشريط كان يقطع نصه على سطح المكتب.
+# 3) عرض الصفحة في الهاتف كان يتمرر أفقيًا بمقدار 20 بكسل (الخريطة وحدها داخل حاوية تمرير).
+VISUAL_FIXES_MARK = "<!--replica-visual-fixes-->"
+VISUAL_FIXES_CSS = (
+    VISUAL_FIXES_MARK
+    + "<style>@media screen{"
+    + "body:not(.daylight) a:not([class]):not([style]){color:#7fd6cc}"
+    + "body.daylight a:not([class]):not([style]){color:#0a5c7a}"
+    + "#sn-theme{white-space:nowrap;min-width:max-content}"
+    + ".wrap{overflow-x:clip}"
+    + "}</style>"
+)
+
+
+def apply_visual_fixes(out_dir):
+    """يُضيف كتلة الإصلاحات قبل </head> في كل صفحة HTML مرة واحدة فقط. يُرجع عدد الصفحات المعدّلة."""
+    changed = 0
+    for d, _, files in os.walk(out_dir):
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(d, name)
+            with open(path, encoding="utf-8", errors="ignore") as f:
+                text = f.read()
+            if VISUAL_FIXES_MARK in text or text.count("</head>") != 1:
+                continue
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(text.replace("</head>", VISUAL_FIXES_CSS + "</head>"))
+            changed += 1
+    return changed
+
+
 def build(args):
     out_root = os.path.abspath(args.out)
     out_dir = os.path.join(out_root, "seawatch-replica")
@@ -452,6 +503,8 @@ def build(args):
     rewritten = rewrite_to_relative(out_dir)
     brand = brand_normalize(out_dir) if not args.no_brand else None
     feeds = write_feeds_status(out_dir, args.feeds_status or FEEDS_STATUS_DEFAULT)
+    snapshot = write_snapshot_notice(out_dir, dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"))
+    visual_pages = apply_visual_fixes(out_dir)
     broken = check_local_links(out_dir)
 
     files = [os.path.join(d, n) for d, _, ns in os.walk(out_dir) for n in ns]
@@ -466,6 +519,8 @@ def build(args):
         "brand_applied": brand,
         "not_found_page_saved": not_found,
         "feeds_status": feeds,
+        "snapshot_notice": snapshot,
+        "visual_fixes_pages": visual_pages,
         "missing": missing,
         "broken_local_links": broken,
     }
