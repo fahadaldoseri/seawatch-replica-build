@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-15",
+  "method": "إعادة فحص مباشر من بيئة التحقق: طلب HTTP واحد لكل رابط أساسي، بلا مسارات بديلة أو أرشيف. الأصل كان يستعمل مسارات بديلة، لذلك لا تتطابق النتائج تمامًا.",
+  "status": "failed",
+  "checked": 81,
+  "checked_unique_urls": 80,
+  "ok": 59,
+  "failed": 22,
+  "failed_by_category": {
+    "blocked_403": 12,
+    "not_found_404": 1,
+    "unreachable": 9
+  },
+  "stale": [
+    12,
+    20,
+    20,
+    30,
+    32
+  ],
+  "stale_days_limit": 14,
+  "fail_ratio": 0.272,
+  "fail_ratio_limit": 0.2,
+  "failed_feeds": [
+    {
+      "num": 1,
+      "name": "UKMTO — الحوادث الأخيرة",
+      "primary_url": "https://www.ukmto.org/recent-incidents",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 4545 bytes"
+    },
+    {
+      "num": 14,
+      "name": "قناة العربية",
+      "primary_url": "https://www.alarabiya.net/feed/rss2/ar.xml",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 179532 bytes"
+    },
+    {
+      "num": 14,
+      "name": "قناة العربية",
+      "primary_url": "https://www.alarabiya.net/feed/rss2/ar/arab-and-world.xml",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 179532 bytes"
+    },
+    {
+      "num": 14,
+      "name": "قناة العربية",
+      "primary_url": "https://www.alarabiya.net/feed/rss2/ar/aswaq.xml",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 179532 bytes"
+    },
+    {
+      "num": 17,
+      "name": "حساب @bna_en على X",
+      "primary_url": "https://web.archive.org/web/20260108135704/https://www.bna.bh/en/RSSFeeds.aspx?cms=iQRpheuphYtJ6pyXUGiNqqtA5DItoRVa",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 20,
+      "name": "جريدة الأيام",
+      "primary_url": "https://www.alayam.com/pages/rss",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 5945 bytes"
+    },
+    {
+      "num": 28,
+      "name": "وكالة الأنباء العُمانية",
+      "primary_url": "https://omannews.gov.om/rss.ona",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 28,
+      "name": "وكالة الأنباء العُمانية",
+      "primary_url": "https://omannews.gov.om/rssinfo/",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 29,
+      "name": "البحرية الملكية البريطانية",
+      "primary_url": "https://www.royalnavy.mod.uk/news",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 4551 bytes"
+    },
+    {
+      "num": 33,
+      "name": "MARAD/MSCI",
+      "primary_url": "https://www.maritime.dot.gov/rss.xml",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 389 bytes"
+    },
+    {
+      "num": 35,
+      "name": "Splash 247",
+      "primary_url": "https://splash247.com/feed/atom/",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 5401 bytes"
+    },
+    {
+      "num": 36,
+      "name": "Lloyd's List",
+      "primary_url": "https://www.lloydslist.com/rss/lloyds-list",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 5485 bytes"
+    },
+    {
+      "num": 36,
+      "name": "Lloyd's List",
+      "primary_url": "https://www.lloydslist.com/rss-feeds",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 5467 bytes"
+    },
+    {
+      "num": 37,
+      "name": "MarineLink",
+      "primary_url": "https://www.marinelink.com/news/rss",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 40,
+      "name": "MarineTraffic",
+      "primary_url": "https://www.marinetraffic.com/en/maritime-news",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 5667 bytes"
+    },
+    {
+      "num": 45,
+      "name": "IRIB News",
+      "primary_url": "https://www.iribnews.ir/fa/rss/allnews",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 46,
+      "name": "ISNA",
+      "primary_url": "https://www.isna.ir/rss",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 46,
+      "name": "ISNA",
+      "primary_url": "https://en.isna.ir/rss",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 47,
+      "name": "Mehr — العربي",
+      "primary_url": "https://ar.mehrnews.com/rss",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 47,
+      "name": "Mehr — العربي",
+      "primary_url": "https://en.mehrnews.com/rss",
+      "category": "unreachable",
+      "http": 0,
+      "error": "HTTP 0, 0 bytes"
+    },
+    {
+      "num": 55,
+      "name": "Axios",
+      "primary_url": "https://api.axios.com/feed/",
+      "category": "blocked_403",
+      "http": 403,
+      "error": "HTTP 403, 4545 bytes"
+    },
+    {
+      "num": 62,
+      "name": "حساب @Yemenarmyeng على X",
+      "primary_url": "https://x.com/Yemenarmyeng",
+      "category": "not_found_404",
+      "http": 404,
+      "error": "HTTP 404, 49370 bytes"
+    }
+  ],
+  "written_utc": "2026-11-15T18:11:11Z"
+}

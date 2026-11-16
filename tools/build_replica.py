@@ -433,7 +433,7 @@ def write_snapshot_notice(out_dir, built_at):
         return False
     with open(home, encoding="utf-8") as f:
         text = f.read()
-    if text.count("</body>") != 1:
+    if text.count("</body>") != 1 or "نسخة ثابتة (لقطة)" in text:
         return False
     note = html.escape(f"نسخة ثابتة (لقطة) بتاريخ {built_at}، ولا تُحدَّث تلقائيًا.")
     line = (f'<p style="max-width:920px;margin:8px auto;padding:0 16px;font-size:14px;'
@@ -475,6 +475,45 @@ def apply_visual_fixes(out_dir):
                 f.write(text.replace("</head>", VISUAL_FIXES_CSS + "</head>"))
             changed += 1
     return changed
+
+
+def build_snapshot(args):
+    """ينسخ لقطة محفوظة داخل المستودع إلى مجلد الإخراج، ويطبّق الإصلاحات المرئية ويفحص الروابط.
+    لا يتصل بأي موقع خارجي، فلا يسحب شيئًا من الموقع الأصلي."""
+    src = os.path.abspath(args.snapshot)
+    if not os.path.exists(os.path.join(src, "index.html")):
+        print(f"فشل: لا توجد صفحة رئيسية في اللقطة {src}", file=sys.stderr)
+        return 1
+    out_root = os.path.abspath(args.out)
+    out_dir = os.path.join(out_root, "seawatch-replica")
+    if os.path.exists(out_dir):
+        shutil.rmtree(out_dir)
+    shutil.copytree(src, out_dir)
+    visual_pages = apply_visual_fixes(out_dir)
+    snap_date = getattr(args, "snapshot_date", None) or dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    notice = write_snapshot_notice(out_dir, snap_date)
+    broken = check_local_links(out_dir)
+    files = [os.path.join(d, n) for d, _, ns in os.walk(out_dir) for n in ns]
+    manifest = {
+        "mode": "snapshot",
+        "snapshot_date": snap_date,
+        "snapshot_notice": notice,
+        "built_at_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "files": len(files),
+        "visual_fixes_pages": visual_pages,
+        "broken_local_links": broken,
+    }
+    with open(os.path.join(out_dir, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+    if args.zip:
+        base = os.path.join(out_root, "seawatch-replica")
+        if os.path.exists(base + ".zip"):
+            os.remove(base + ".zip")
+        shutil.make_archive(base, "zip", out_root, "seawatch-replica")
+    print(f"اللقطة: {len(files)} ملفًا | إصلاحات مرئية: {visual_pages} | روابط مكسورة: {len(broken)}")
+    for b in broken:
+        print(f"  رابط مكسور: {b['in']} -> {b['to']}")
+    return 1 if broken else 0
 
 
 def build(args):
@@ -563,10 +602,14 @@ def main():
     p.add_argument("--zip", action="store_true", help="إنشاء أرشيف zip بجانب المجلد")
     p.add_argument("--no-brand", action="store_true", help="تخطي التوحيد البصري والشعار المحايد")
     p.add_argument("--feeds-status", help="ملف حالة التغذيات للعرض (الافتراضي sources/feeds-status.json)")
+    p.add_argument("--snapshot", metavar="DIR", help="بناء من لقطة محفوظة داخل المستودع بلا أي اتصال خارجي")
+    p.add_argument("--snapshot-date", help="تاريخ اللقطة لسطر العرض (الافتراضي اليوم)")
     p.add_argument("--verify", metavar="DIR", help="فحص الروابط المحلية لنسخة موجودة فقط")
     args = p.parse_args()
     if args.verify:
         return verify(args.verify)
+    if args.snapshot:
+        return build_snapshot(args)
     if not args.source:
         p.error("--source مطلوب")
     return build(args)
